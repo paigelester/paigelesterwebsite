@@ -1,0 +1,3 @@
+dispatch:
+  - url: "paigelester.co.uk/*"
+    service: default
