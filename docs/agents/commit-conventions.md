@@ -45,7 +45,7 @@ Reference the GitHub issue in the footer:
 - `Refs #N` when the commit contributes to the issue without finishing it.
 
 ```
-feat: show the Work Experience CV Section
+feat: show the Work CV Section
 
 Closes #12
 ```

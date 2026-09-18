@@ -1,19 +1,19 @@
-import type { WorkExperience as WorkExperienceData } from "@/content/cv";
+import type { Work as WorkData } from "@/content/cv";
 import { formatDateRange } from "../_lib/formatDateRange";
-import styles from "./WorkExperience.module.scss";
+import styles from "./Work.module.scss";
 
 type Props = {
-  workExperience: WorkExperienceData;
+  work: WorkData;
 };
 
-export default function WorkExperience({ workExperience }: Props) {
+export default function Work({ work }: Props) {
   return (
-    <section className={styles.section} aria-labelledby="work-experience">
-      <h2 id="work-experience" className={styles.heading}>
+    <section className={styles.section} aria-labelledby="work">
+      <h2 id="work" className={styles.heading}>
         Work Experience
       </h2>
       <ol className={styles.roles}>
-        {workExperience.roles.map((role) => (
+        {work.roles.map((role) => (
           <li
             key={`${role.organisation}-${role.title}-${role.dates.start}`}
             className={styles.role}

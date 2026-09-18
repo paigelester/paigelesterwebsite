@@ -29,7 +29,7 @@ export type DateRange =
   { start: YearMonth; end?: YearMonth } | { start: Year; end?: Year };
 
 /** The short introductory summary at the top of the CV. */
-export type PersonalStatement = {
+export type Intro = {
   paragraphs: readonly string[];
 };
 
@@ -43,7 +43,7 @@ export type Role = {
 };
 
 /** Paige's past and current roles, most recent first. */
-export type WorkExperience = {
+export type Work = {
   roles: readonly Role[];
 };
 
@@ -87,8 +87,8 @@ export type Links = {
 
 /** Paige's CV, composed of one type per CV Section. */
 export type CV = {
-  personalStatement: PersonalStatement;
-  workExperience: WorkExperience;
+  intro: Intro;
+  work: Work;
   skills: Skills;
   education: Education;
   links: Links;
@@ -96,12 +96,12 @@ export type CV = {
 
 // Education is placeholder content until launch.
 export const cv: CV = {
-  personalStatement: {
+  intro: {
     paragraphs: [
       "Engineering Manager with 12 years in software, spanning regulated FinTech and scientific instrument software. I line-manage a team of five delivering three .NET and Angular applications against three separate release schedules, having come to management through the code — Senior and then Principal Engineer on the same team. That is where I intend to stay: close enough to the technical detail to make architectural calls and to mentor engineers through real work rather than from a distance. In the past year I have progressed two engineers from mid-level to senior, shipped eight releases, and taken on the structural problems that slow delivery down, including those owned by other departments. I am looking for an engineering management role with that same balance of people leadership and technical involvement — the domain matters less to me than a well-defined problem."
     ]
   },
-  workExperience: {
+  work: {
     roles: [
       {
         title: "Engineering Manager",

@@ -1,9 +1,9 @@
 import { cv } from "@/content/cv";
 import Education from "./_components/Education";
 import Links from "./_components/Links";
-import PersonalStatement from "./_components/PersonalStatement";
+import Intro from "./_components/Intro";
 import Skills from "./_components/Skills";
-import WorkExperience from "./_components/WorkExperience";
+import Work from "./_components/Work";
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -20,8 +20,8 @@ export default function Home() {
           Download CV (PDF)
         </a>
       </header>
-      <PersonalStatement personalStatement={cv.personalStatement} />
-      <WorkExperience workExperience={cv.workExperience} />
+      <Intro intro={cv.intro} />
+      <Work work={cv.work} />
       <Skills skills={cv.skills} />
       <Education education={cv.education} />
       <Links links={cv.links} />
