@@ -57,6 +57,8 @@ $width-3xl: 48rem;
 // Breakpoints
 $breakpoint-sm: 40rem;
 $breakpoint-md: 48rem;
+// The mockup's tablet breakpoint, kept in its px.
+$breakpoint-tablet: 920px;
 // The mockup's phone breakpoint, kept in its px.
 $breakpoint-phone: 620px;
 // The mockup's small phone breakpoint, kept in its px.
@@ -64,6 +66,7 @@ $breakpoint-small-phone: 480px;
 
 // Motion
 $duration-fast: 150ms;
+$duration-medium: 200ms;
 
 // Print
 $page-size: A4;
@@ -199,3 +202,34 @@ $site-dot-advice-line-height-phone: 1.4;
 $site-dot-advice-height-phone: 2 * $site-dot-advice-font-size-phone *
   $site-dot-advice-line-height-phone; // Two lines, about 31px
 $site-dot-advice-margin-top-phone: -0.125rem; // -2px
+// Layout: the Contents side menu beside the main column.
+$site-layout-max-width: 77.5rem; // 1240px
+$site-main-padding: 0 1.75rem 0 2.75rem; // 0 28px 0 44px
+$site-main-padding-tablet: 0 1.25rem; // 0 20px
+$site-main-padding-small-phone: 0 1rem; // 0 16px
+// Stand-ins for the heights Contents measures, until it has run.
+$site-header-height-fallback: 3.75rem; // 60px
+$site-contents-height-fallback: 2.5rem; // 40px
+// The space between the sticky header and menu bar and a section scrolled to.
+$site-scroll-gap: 1.25rem; // 20px
+// Contents
+$site-contents-z-index: 30;
+$site-contents-width: 12.5rem; // 200px
+$site-contents-padding: 3rem 0 3rem 1.75rem; // 48px 0 48px 28px
+$site-contents-top: 6rem; // 96px
+$site-contents-gap: 0.125rem; // 2px
+$site-contents-letter-spacing: 0.1em;
+$site-contents-title-margin-bottom: 0.875rem; // 14px
+$site-contents-entry-gap: 0.625rem; // 10px
+$site-contents-entry-padding: 0.4375rem 0; // 7px 0
+$site-contents-line-width: 1rem; // 16px
+$site-contents-line-width-active: 1.625rem; // 26px
+$site-contents-links-margin-top: 1.5rem; // 24px
+$site-contents-links-padding-top: 1rem; // 16px
+$site-contents-links-gap: 0.5625rem; // 9px
+$site-contents-link-icon-gap: 0.5625rem; // 9px
+// As a bar under the header, below the tablet breakpoint.
+$site-contents-bar-opacity: 94%;
+$site-contents-bar-padding: 0.6875rem 1.25rem; // 11px 20px
+$site-contents-bar-gap: 1.125rem; // 18px
+$site-contents-bar-links-gap: 0.875rem; // 14px

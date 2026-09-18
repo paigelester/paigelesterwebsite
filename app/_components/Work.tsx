@@ -12,8 +12,12 @@ export default function Work({ work, variant }: Props) {
   const onSite = variant === "site";
 
   return (
-    <section className={styles.section} aria-labelledby="work">
-      <h2 id="work" className={styles.heading}>
+    <section
+      className={styles.section}
+      id="work"
+      aria-labelledby="work-heading"
+    >
+      <h2 id="work-heading" className={styles.heading}>
         {onSite ? "Work" : "Work Experience"}
       </h2>
       <ol className={styles.roles}>

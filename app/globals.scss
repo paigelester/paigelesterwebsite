@@ -53,3 +53,11 @@ svg {
 code {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
 }
+
+// Glides to a section picked from the Contents, unless the visitor prefers
+// reduced motion.
+@media (prefers-reduced-motion: no-preference) {
+  html:has([data-site]) {
+    scroll-behavior: smooth;
+  }
+}

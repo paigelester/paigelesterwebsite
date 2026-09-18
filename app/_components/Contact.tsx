@@ -21,8 +21,12 @@ export default function Contact({ education, links }: Props) {
   );
 
   return (
-    <section className={styles.section} aria-labelledby="contact">
-      <h2 id="contact" className={styles.heading}>
+    <section
+      className={styles.section}
+      id="contact"
+      aria-labelledby="contact-heading"
+    >
+      <h2 id="contact-heading" className={styles.heading}>
         Contact
       </h2>
       <p className={styles.headline}>

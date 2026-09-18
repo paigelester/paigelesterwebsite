@@ -8,8 +8,12 @@ type Props = {
 
 export default function Education({ education }: Props) {
   return (
-    <section className={styles.section} aria-labelledby="education">
-      <h2 id="education" className={styles.heading}>
+    <section
+      className={styles.section}
+      id="education"
+      aria-labelledby="education-heading"
+    >
+      <h2 id="education-heading" className={styles.heading}>
         Education
       </h2>
       <ol className={styles.qualifications}>

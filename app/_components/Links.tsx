@@ -7,8 +7,12 @@ type Props = {
 
 export default function Links({ links }: Props) {
   return (
-    <section className={styles.section} aria-labelledby="links">
-      <h2 id="links" className={styles.heading}>
+    <section
+      className={styles.section}
+      id="links"
+      aria-labelledby="links-heading"
+    >
+      <h2 id="links-heading" className={styles.heading}>
         Links
       </h2>
       <ul className={styles.links}>

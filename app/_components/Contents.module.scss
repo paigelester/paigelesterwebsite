@@ -1,0 +1,147 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.contents {
+  padding: $site-contents-padding;
+  border-right: $border-width solid var(--line);
+
+  // A scrolling bar under the header.
+  @media (max-width: $breakpoint-tablet) {
+    position: sticky;
+    top: var(--site-header-height, #{$site-header-height-fallback});
+    z-index: $site-contents-z-index;
+    padding: 0;
+    border-right: none;
+    border-bottom: $border-width solid var(--line);
+    background-color: color-mix(
+      in oklab,
+      var(--bg) $site-contents-bar-opacity,
+      transparent
+    );
+    backdrop-filter: blur($site-header-blur);
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.inner {
+  position: sticky;
+  top: $site-contents-top;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-mono;
+  font-size: $site-label-font-size;
+  letter-spacing: $site-contents-letter-spacing;
+  text-transform: uppercase;
+
+  @media (max-width: $breakpoint-tablet) {
+    position: static;
+    flex-direction: row;
+    gap: $site-contents-bar-gap;
+    align-items: center;
+    padding: $site-contents-bar-padding;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+.title {
+  margin-bottom: $site-contents-title-margin-bottom;
+  color: var(--dim);
+
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: $site-contents-gap;
+  list-style: none;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: row;
+    gap: $site-contents-bar-gap;
+  }
+}
+
+.entry {
+  display: flex;
+  gap: $site-contents-entry-gap;
+  align-items: center;
+  padding: $site-contents-entry-padding;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color $duration-fast;
+
+  &:hover,
+  &[aria-current] {
+    color: var(--accent);
+  }
+
+  @include site-button;
+}
+
+.line {
+  width: $site-contents-line-width;
+  height: $border-width;
+  background-color: var(--line);
+  transition:
+    background-color $duration-medium,
+    width $duration-medium;
+
+  [aria-current] > & {
+    width: $site-contents-line-width-active;
+    background-color: var(--accent);
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: $site-contents-links-gap;
+  margin-top: $site-contents-links-margin-top;
+  padding-top: $site-contents-links-padding-top;
+  border-top: $border-width solid var(--line);
+  list-style: none;
+  letter-spacing: normal;
+  text-transform: none;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: row;
+    gap: $site-contents-bar-links-gap;
+    margin: 0 0 0 auto;
+    padding: 0;
+    border-top: none;
+  }
+
+  // Phones show the Links in Contact instead.
+  @media (max-width: $breakpoint-phone) {
+    display: none;
+  }
+}
+
+.link {
+  display: flex;
+  gap: $site-contents-link-icon-gap;
+  align-items: center;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color $duration-fast;
+
+  &:hover {
+    color: var(--ink);
+  }
+
+  &:focus-visible {
+    outline: $focus-ring-width solid var(--accent);
+    outline-offset: $focus-ring-offset;
+  }
+}

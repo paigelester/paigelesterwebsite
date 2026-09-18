@@ -7,8 +7,12 @@ type Props = {
 
 export default function Skills({ skills }: Props) {
   return (
-    <section className={styles.section} aria-labelledby="skills">
-      <h2 id="skills" className={styles.heading}>
+    <section
+      className={styles.section}
+      id="skills"
+      aria-labelledby="skills-heading"
+    >
+      <h2 id="skills-heading" className={styles.heading}>
         Skills
       </h2>
       {skills.groups.map((group) => (

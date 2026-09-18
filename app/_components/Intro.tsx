@@ -18,8 +18,12 @@ export default function Intro(props: Props) {
 
   if (props.variant === "print") {
     return (
-      <section className={styles.section} aria-labelledby="intro">
-        <h2 id="intro" className={styles.heading}>
+      <section
+        className={styles.section}
+        id="intro"
+        aria-labelledby="intro-heading"
+      >
+        <h2 id="intro-heading" className={styles.heading}>
           Personal Statement
         </h2>
         {paragraphs}
@@ -32,11 +36,15 @@ export default function Intro(props: Props) {
   );
 
   return (
-    <section className={styles.section} aria-labelledby="intro">
+    <section
+      className={styles.section}
+      id="intro"
+      aria-labelledby="intro-heading"
+    >
       <p className={styles.jobTitles}>
         Engineering Manager · Principal Software Engineer
       </p>
-      <h1 id="intro" className={styles.name}>
+      <h1 id="intro-heading" className={styles.name}>
         Paige <br />
         Lester
       </h1>
