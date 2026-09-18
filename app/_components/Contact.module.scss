@@ -118,3 +118,10 @@
 .qualifications {
   list-style: none;
 }
+
+.inspectorNote {
+  margin-top: $site-contact-note-margin-top;
+  font-family: $font-mono;
+  font-size: $site-contact-note-font-size;
+  color: var(--dim);
+}

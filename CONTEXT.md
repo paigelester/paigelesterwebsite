@@ -33,7 +33,7 @@ The CV Section of ways to reach Paige elsewhere: outbound links to Paige's profi
 _Avoid_: Socials
 
 **Contact**:
-The closing part of the site telling a reader how to reach Paige: the Links, Education and a note that references are available on request. Shown on the site only, not in the downloadable CV.
+The closing part of the site telling a reader how to reach Paige: the Links, Education, a note that references are available on request and a note for visitors who inspect the page. Shown on the site only, not in the downloadable CV.
 _Avoid_: Footer, get in touch
 
 ### Site

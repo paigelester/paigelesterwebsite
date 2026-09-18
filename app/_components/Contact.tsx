@@ -9,8 +9,9 @@ type Props = {
 };
 
 /**
- * How to reach Paige, closing the site: the Links, Education and a references
- * note. Site-only, so the PDF page keeps its own Education and Links.
+ * How to reach Paige, closing the site: the Links, Education, a references
+ * note and a note for visitors who inspect the page. Site-only, so the PDF
+ * page keeps its own Education and Links.
  */
 export default function Contact({ education, links }: Props) {
   const emailLinks = links.profiles.filter((link) =>
@@ -80,6 +81,12 @@ export default function Contact({ education, links }: Props) {
           <p>Available on request</p>
         </div>
       </div>
+      {/* Shown as text, like a comment found in the page source. */}
+      <p className={styles.inspectorNote}>
+        {
+          "<!-- you opened the inspector. good instinct. there's a note for you in the console. -->"
+        }
+      </p>
     </section>
   );
 }

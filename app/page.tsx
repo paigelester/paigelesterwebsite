@@ -1,4 +1,5 @@
 import { cv } from "@/content/cv";
+import ConsoleNote from "./_components/ConsoleNote";
 import Contact from "./_components/Contact";
 import Contents from "./_components/Contents";
 import Header from "./_components/Header";
@@ -11,6 +12,7 @@ import styles from "./page.module.scss";
 export default function Home() {
   return (
     <SitePage>
+      <ConsoleNote />
       <Header />
       <div className={styles.layout}>
         <Contents links={cv.links} />
