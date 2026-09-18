@@ -22,12 +22,22 @@
   }
 }
 
+// A CV Section on the site: spaced and divided from the one above it.
+@mixin site-section {
+  @include on-site {
+    padding: $site-section-padding;
+    border-top: $border-width solid var(--line);
+  }
+}
+
 // A CV Section's heading, set as a label on the site.
 @mixin site-section-heading {
   @include on-site {
     font-family: $font-mono;
-    // DM Mono has no semibold, so a heavier weight would be faked.
-    font-weight: $font-weight-medium;
+    font-size: $site-label-font-size;
+    font-weight: $font-weight-regular;
+    letter-spacing: $site-label-letter-spacing;
+    text-transform: uppercase;
     color: var(--dim);
   }
 }

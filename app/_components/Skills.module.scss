@@ -5,6 +5,12 @@
   display: flex;
   flex-direction: column;
   gap: $space-sm;
+  @include site-section;
+
+  // The heading and groups set their own spacing on the site.
+  @include on-site {
+    gap: 0;
+  }
 }
 
 .heading {
@@ -13,6 +19,10 @@
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $black;
+
+  @include on-site {
+    margin-bottom: $site-label-margin-bottom;
+  }
 }
 
 .group {
@@ -20,6 +30,29 @@
   display: flex;
   flex-direction: column;
   gap: $space-xs;
+
+  // Group name beside its tags, or above them on phones.
+  @include on-site {
+    display: grid;
+    grid-template-columns: $site-skills-name-width minmax(0, 1fr);
+    gap: $site-skills-column-gap;
+    align-items: baseline;
+
+    @media (max-width: $breakpoint-phone) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: $space-xs;
+    }
+  }
+}
+
+.group + .group {
+  @include on-site {
+    margin-top: $site-skills-row-gap;
+
+    @media (max-width: $breakpoint-phone) {
+      margin-top: $space-md;
+    }
+  }
 }
 
 .groupName {
@@ -28,7 +61,10 @@
   color: $black;
 
   @include on-site {
-    color: var(--ink);
+    font-family: $font-mono;
+    font-size: $site-mono-small-font-size;
+    font-weight: $font-weight-regular;
+    color: var(--dim);
   }
 }
 
@@ -49,7 +85,11 @@
   color: $foreground;
 
   @include on-site {
-    background: var(--chip);
+    padding: $site-tag-padding;
+    border: $border-width solid var(--chip);
+    border-radius: $radius-site;
+    background: none;
+    font-size: $site-tag-font-size;
     color: var(--ink);
   }
 }
