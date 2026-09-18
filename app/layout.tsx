@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 const title = "Paige Lester - CV";
 const description =
-  "The CV of Paige Lester, software developer: work experience, skills, education and links.";
+  "The CV of Paige Lester, engineering manager and software developer: work experience, skills, education and links.";
 
 export const metadata: Metadata = {
   metadataBase: canonicalOrigin,
