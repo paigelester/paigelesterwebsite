@@ -21,7 +21,13 @@ export default function WorkExperience({ workExperience }: Props) {
             <h3 className={styles.title}>{role.title}</h3>
             <p className={styles.organisation}>{role.organisation}</p>
             <p className={styles.dates}>{formatDateRange(role.dates)}</p>
-            <p className={styles.description}>{role.description}</p>
+            <ul className={styles.highlights}>
+              {role.highlights.map((highlight) => (
+                <li key={highlight} className={styles.highlight}>
+                  {highlight}
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ol>
