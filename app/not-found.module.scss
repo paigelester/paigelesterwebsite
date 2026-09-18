@@ -1,0 +1,30 @@
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  width: 100%;
+  max-width: $width-3xl;
+  margin: 0 auto;
+  padding: $space-xl $space-md;
+}
+
+.heading {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-3xl;
+  letter-spacing: $letter-spacing-tight;
+  color: $black;
+}
+
+.message {
+  font-size: $font-size-base;
+  color: $foreground;
+}
+
+.link {
+  @include text-link;
+  align-self: flex-start;
+}

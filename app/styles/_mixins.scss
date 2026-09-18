@@ -1,0 +1,21 @@
+@use "./variables" as *;
+
+// An underlined text link with a visible keyboard focus ring.
+@mixin text-link {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $foreground;
+  text-decoration: underline;
+  text-underline-offset: $underline-offset;
+  transition: color $duration-fast;
+
+  &:hover {
+    color: $foreground-hover;
+  }
+
+  &:focus-visible {
+    outline: $focus-ring-width solid $foreground;
+    outline-offset: $focus-ring-offset;
+    border-radius: $radius-sm;
+  }
+}
