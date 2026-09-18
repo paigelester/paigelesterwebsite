@@ -1,6 +1,5 @@
 import { cv } from "@/content/cv";
-import Education from "./_components/Education";
-import Links from "./_components/Links";
+import Contact from "./_components/Contact";
 import Intro from "./_components/Intro";
 import SitePage from "./_components/SitePage";
 import Skills from "./_components/Skills";
@@ -25,8 +24,7 @@ export default function Home() {
         <Intro intro={cv.intro} />
         <Work work={cv.work} />
         <Skills skills={cv.skills} />
-        <Education education={cv.education} />
-        <Links links={cv.links} />
+        <Contact education={cv.education} links={cv.links} />
       </main>
     </SitePage>
   );

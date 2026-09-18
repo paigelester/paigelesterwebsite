@@ -1,0 +1,131 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.section {
+  @include site-section;
+
+  // Guarded like the mixin, so it outranks the mixin's padding.
+  @include on-site {
+    padding-bottom: $site-contact-padding-bottom;
+  }
+}
+
+.heading {
+  @include site-section-heading;
+  margin-bottom: $site-label-margin-bottom;
+}
+
+.headline {
+  max-width: $site-contact-headline-max-width;
+  margin-bottom: $space-md;
+  font-size: $site-contact-headline-font-size;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $site-contact-headline-letter-spacing;
+  text-wrap: pretty;
+}
+
+.actions,
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $site-contact-gap;
+  align-items: center;
+  margin-bottom: $site-contact-block-gap;
+}
+
+@mixin outline-button {
+  padding: $site-button-padding;
+  border: $border-width solid var(--chip);
+  border-radius: $radius-site;
+  font-family: $font-mono;
+  font-size: $site-mono-button-font-size;
+  text-decoration: none;
+  transition:
+    color $duration-fast,
+    background-color $duration-fast,
+    border-color $duration-fast;
+
+  &:focus-visible {
+    outline: $focus-ring-width solid var(--accent);
+    outline-offset: $focus-ring-offset;
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    display: inline-flex;
+    align-items: center;
+    min-height: $site-tap-target;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.email {
+  @include outline-button;
+  border-color: var(--accent);
+  color: var(--accent);
+
+  &:hover {
+    background-color: var(--accent);
+    color: var(--btn-fg);
+  }
+}
+
+.download {
+  @include outline-button;
+  color: var(--muted);
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+// Phones only: wider screens show the Links beside the Contents side menu.
+.profiles {
+  display: none;
+  list-style: none;
+
+  @media (max-width: $breakpoint-phone) {
+    display: flex;
+    // Sits closer to the buttons above than the mockup's usual block gap.
+    margin-top: -$space-md;
+  }
+}
+
+.profile {
+  @include outline-button;
+  display: flex;
+  gap: $site-contact-icon-gap;
+  align-items: center;
+  color: var(--muted);
+
+  &:hover {
+    color: var(--ink);
+  }
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $site-contact-details-gap;
+  padding-top: $site-contact-details-padding-top;
+  border-top: $border-width solid var(--line);
+  font-size: $site-contact-details-font-size;
+  line-height: $site-contact-details-line-height;
+  color: var(--muted);
+}
+
+.detailHeading {
+  margin-bottom: $space-xs;
+  font-family: $font-mono;
+  font-size: $site-contact-detail-label-font-size;
+  font-weight: $font-weight-regular;
+  line-height: normal;
+  letter-spacing: $site-contact-detail-label-letter-spacing;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.qualifications {
+  list-style: none;
+}
