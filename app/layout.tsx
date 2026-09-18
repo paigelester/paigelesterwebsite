@@ -14,13 +14,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"]
 });
 
+const title = "Paige Lester - CV";
+const description =
+  "The CV of Paige Lester, software developer: work experience, skills, education and links.";
+
 export const metadata: Metadata = {
   metadataBase: canonicalOrigin,
-  title: "Paige Lester - CV",
-  description:
-    "The CV of Paige Lester, software developer: work experience, skills, education and links.",
+  title,
+  description,
   // Set here so every page shares the one canonical address.
-  alternates: { canonical: "/" }
+  alternates: { canonical: "/" },
+  // The image comes from the opengraph-image.png file convention.
+  openGraph: { type: "website", url: "/", title, description }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
