@@ -1,0 +1,39 @@
+@use "../styles/variables" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.heading {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $black;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  list-style: none;
+}
+
+.link {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $foreground;
+  text-decoration: underline;
+  text-underline-offset: $underline-offset;
+  transition: color $duration-fast;
+
+  &:hover {
+    color: $foreground-hover;
+  }
+
+  &:focus-visible {
+    outline: $focus-ring-width solid $foreground;
+    outline-offset: $focus-ring-offset;
+    border-radius: $radius-sm;
+  }
+}

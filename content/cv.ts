@@ -65,12 +65,24 @@ export type Education = {
   qualifications: readonly Qualification[];
 };
 
+/** An outbound link to one of Paige's profiles elsewhere, e.g. LinkedIn. */
+export type Link = {
+  label: string;
+  url: `https://${string}`;
+};
+
+/** Paige's profiles elsewhere. */
+export type Links = {
+  profiles: readonly Link[];
+};
+
 /** Paige's CV, composed of one type per CV Section. */
 export type CV = {
   personalStatement: PersonalStatement;
   workExperience: WorkExperience;
   skills: Skills;
   education: Education;
+  links: Links;
 };
 
 // Placeholder content until launch.
@@ -140,6 +152,12 @@ export const cv: CV = {
         institution: "Sample Sixth Form College",
         dates: { start: "2013-09", end: "2015-06" }
       }
+    ]
+  },
+  links: {
+    profiles: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/example" },
+      { label: "GitHub", url: "https://github.com/example" }
     ]
   }
 };
