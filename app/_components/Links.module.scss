@@ -24,9 +24,10 @@
 .link {
   @include text-link;
 
-  // A printed CV can't be clicked, so spell out where each link goes.
+  // A printed CV can't be clicked, so spell out where each link goes. An
+  // email link's text is already the address, so it needs no spelling out.
   @media print {
-    &::after {
+    &:not([href^="mailto:"])::after {
       content: " (" attr(href) ")";
     }
   }

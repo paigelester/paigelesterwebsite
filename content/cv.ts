@@ -66,13 +66,16 @@ export type Education = {
   qualifications: readonly Qualification[];
 };
 
-/** An outbound link to one of Paige's profiles elsewhere, e.g. LinkedIn. */
+/**
+ * A way to reach Paige elsewhere: an outbound link to one of her profiles,
+ * e.g. LinkedIn, or her email address.
+ */
 export type Link = {
   label: string;
-  url: `https://${string}`;
+  url: `https://${string}` | `mailto:${string}`;
 };
 
-/** Paige's profiles elsewhere. */
+/** Paige's profiles elsewhere and her email address. */
 export type Links = {
   profiles: readonly Link[];
 };
@@ -86,7 +89,7 @@ export type CV = {
   links: Links;
 };
 
-// Education and Links are placeholder content until launch.
+// Education is placeholder content until launch.
 export const cv: CV = {
   personalStatement: {
     paragraphs: [
@@ -235,8 +238,13 @@ export const cv: CV = {
   },
   links: {
     profiles: [
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/example" },
-      { label: "GitHub", url: "https://github.com/example" }
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/paige-lester-267b979a"
+      },
+      { label: "GitHub", url: "https://github.com/paigelester" },
+      // The address itself, so it can still be read on a printed CV.
+      { label: "paigelester7@gmail.com", url: "mailto:paigelester7@gmail.com" }
     ]
   }
 };
