@@ -1,0 +1,6 @@
+# Prettier also skips everything in .gitignore.
+
+# The 2020 codebase, kept for reference until it is removed
+legacy/
+
+package-lock.json

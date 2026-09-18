@@ -8,125 +8,125 @@ $button-height: 3rem;
 $button-width: 9.875rem;
 
 .page {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: $zinc-50;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $zinc-50;
 }
 
 .main {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: $width-3xl;
-    padding: $space-2xl $space-xl;
-    background: $white;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $width-3xl;
+  padding: $space-2xl $space-xl;
+  background: $white;
 
-    @media (min-width: $breakpoint-sm) {
-        align-items: flex-start;
-    }
+  @media (min-width: $breakpoint-sm) {
+    align-items: flex-start;
+  }
 }
 
 .logo {
-    width: $logo-width;
-    height: $logo-height;
+  width: $logo-width;
+  height: $logo-height;
 }
 
 .intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: $space-lg;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-lg;
+  text-align: center;
 
-    @media (min-width: $breakpoint-sm) {
-        align-items: flex-start;
-        text-align: left;
-    }
+  @media (min-width: $breakpoint-sm) {
+    align-items: flex-start;
+    text-align: left;
+  }
 
-    h1 {
-        max-width: $width-xs;
-        font-size: $font-size-3xl;
-        font-weight: $font-weight-semibold;
-        line-height: $line-height-3xl;
-        letter-spacing: $letter-spacing-tight;
-        color: $black;
-    }
+  h1 {
+    max-width: $width-xs;
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-3xl;
+    letter-spacing: $letter-spacing-tight;
+    color: $black;
+  }
 
-    code {
-        padding: $space-3xs $space-2xs;
-        border-radius: $radius-sm;
-        background: $surface-muted;
-        font-size: $font-size-code;
-    }
+  code {
+    padding: $space-3xs $space-2xs;
+    border-radius: $radius-sm;
+    background: $surface-muted;
+    font-size: $font-size-code;
+  }
 
-    p {
-        max-width: $width-md;
-        font-size: $font-size-lg;
-        line-height: $line-height-lg;
-        color: $zinc-600;
-    }
+  p {
+    max-width: $width-md;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+    color: $zinc-600;
+  }
 
-    a {
-        font-weight: $font-weight-medium;
-        color: $zinc-950;
-    }
+  a {
+    font-weight: $font-weight-medium;
+    color: $zinc-950;
+  }
 }
 
 .ctas {
-    display: flex;
-    flex-direction: column;
-    gap: $space-sm;
-    font-size: $font-size-base;
-    font-weight: $font-weight-medium;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
 
-    @media (min-width: $breakpoint-sm) {
-        flex-direction: row;
-    }
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row;
+  }
 }
 
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: $space-xs;
-    width: 100%;
-    height: $button-height;
-    padding: 0 $space-md;
-    border-radius: $radius-full;
-    transition:
-        background-color $duration-fast,
-        border-color $duration-fast;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  width: 100%;
+  height: $button-height;
+  padding: 0 $space-md;
+  border-radius: $radius-full;
+  transition:
+    background-color $duration-fast,
+    border-color $duration-fast;
 
-    @media (min-width: $breakpoint-md) {
-        width: $button-width;
-    }
+  @media (min-width: $breakpoint-md) {
+    width: $button-width;
+  }
 }
 
 .primary {
-    background: var(--foreground);
-    color: var(--background);
+  background: var(--foreground);
+  color: var(--background);
 
-    &:hover {
-        background: $foreground-hover;
-    }
+  &:hover {
+    background: $foreground-hover;
+  }
 }
 
 .secondary {
-    border: $border-width solid $border-color;
+  border: $border-width solid $border-color;
 
-    &:hover {
-        border-color: transparent;
-        background: $surface-subtle;
-    }
+  &:hover {
+    border-color: transparent;
+    background: $surface-subtle;
+  }
 }
 
 .vercelLogo {
-    width: $vercel-logo-width;
-    height: $vercel-logo-height;
+  width: $vercel-logo-width;
+  height: $vercel-logo-height;
 }

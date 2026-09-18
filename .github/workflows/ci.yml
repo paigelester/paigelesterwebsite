@@ -16,6 +16,30 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
+  # Static checks run in parallel with the build so failures surface fast.
+  check:
+    name: ${{ matrix.check.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      # Report every failing check, not just the first.
+      fail-fast: false
+      matrix:
+        check:
+          - { name: Type-check, script: typecheck }
+          - { name: Lint, script: lint }
+          - { name: Format check, script: format:check }
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run ${{ matrix.check.script }}
+
   build:
     name: Build
     runs-on: ubuntu-latest

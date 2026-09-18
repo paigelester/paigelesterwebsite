@@ -1,0 +1,2 @@
+# LF everywhere, so a Windows checkout matches Prettier and CI.
+* text=auto eol=lf
