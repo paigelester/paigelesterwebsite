@@ -29,16 +29,16 @@
   }
 }
 
-// Holds Dot, and takes the space the controls don't.
-.dot {
-  flex: 1;
-  min-width: 0;
-}
-
 .controls {
   display: flex;
   gap: $site-header-controls-gap;
   align-items: center;
+
+  // Between Dot's face and its advice, which wraps below on phones.
+  @media (max-width: $breakpoint-phone) {
+    order: 2;
+    margin-left: auto;
+  }
 }
 
 @mixin header-button {

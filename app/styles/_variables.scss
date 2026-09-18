@@ -187,3 +187,15 @@ $site-header-toggle-height: 1.9375rem; // 31px
 $site-header-download-padding: 0.5625rem 1rem; // 9px 16px
 $site-header-download-letter-spacing: 0.08em;
 $site-header-download-hover-opacity: 0.85;
+// Dot
+$site-dot-gap: 0.75rem; // 12px
+$site-dot-face-padding: 0.375rem 0.625rem; // 6px 10px
+$site-dot-face-letter-spacing: 0.02em;
+// How strongly the accent tints Dot's face on hover.
+$site-dot-face-hover-tint: 12%;
+// On phones the advice wraps below the controls, held to two lines.
+$site-dot-advice-font-size-phone: 0.6875rem; // 11px
+$site-dot-advice-line-height-phone: 1.4;
+$site-dot-advice-height-phone: 2 * $site-dot-advice-font-size-phone *
+  $site-dot-advice-line-height-phone; // Two lines, about 31px
+$site-dot-advice-margin-top-phone: -0.125rem; // -2px

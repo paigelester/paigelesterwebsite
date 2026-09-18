@@ -1,0 +1,69 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+// Takes the header's space that the controls don't.
+.dot {
+  display: flex;
+  flex: 1;
+  gap: $site-dot-gap;
+  align-items: center;
+  min-width: 0;
+
+  // On phones the face and advice join the header's own row, so the advice
+  // can wrap onto its own line below the controls.
+  @media (max-width: $breakpoint-phone) {
+    display: contents;
+  }
+}
+
+.face {
+  flex: none;
+  cursor: pointer;
+  padding: $site-dot-face-padding;
+  border: $border-width solid var(--chip);
+  border-radius: $radius-site;
+  background: transparent;
+  font-family: $font-mono;
+  font-size: $site-mono-button-font-size;
+  letter-spacing: $site-dot-face-letter-spacing;
+  color: var(--accent);
+  transition:
+    border-color $duration-fast,
+    background-color $duration-fast;
+
+  &:hover {
+    border-color: var(--accent);
+    background-color: color-mix(
+      in oklab,
+      var(--accent) $site-dot-face-hover-tint,
+      transparent
+    );
+  }
+
+  @include site-button;
+
+  @media (max-width: $breakpoint-phone) {
+    order: 1;
+  }
+}
+
+.advice {
+  min-width: 0;
+  overflow: hidden;
+  font-family: $font-mono;
+  font-size: $site-label-font-size;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+
+  @media (max-width: $breakpoint-phone) {
+    flex: 1 1 100%;
+    order: 3;
+    height: $site-dot-advice-height-phone;
+    margin-top: $site-dot-advice-margin-top-phone;
+    font-size: $site-dot-advice-font-size-phone;
+    line-height: $site-dot-advice-line-height-phone;
+    text-overflow: clip;
+    white-space: normal;
+  }
+}
