@@ -1,0 +1,49 @@
+@use "../styles/variables" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.heading {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $black;
+}
+
+.roles {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  list-style: none;
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3xs;
+}
+
+.title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $black;
+}
+
+.organisation {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $foreground;
+}
+
+.dates {
+  font-size: $font-size-base;
+  color: $zinc-600;
+}
+
+.description {
+  font-size: $font-size-base;
+  line-height: $line-height-lg;
+  color: $zinc-600;
+}

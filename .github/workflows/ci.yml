@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  # Static checks run in parallel with the build so failures surface fast.
+  # Static checks and unit tests run in parallel with the build so failures surface fast.
   check:
     name: ${{ matrix.check.name }}
     runs-on: ubuntu-latest
@@ -28,6 +28,7 @@ jobs:
           - { name: Type-check, script: typecheck }
           - { name: Lint, script: lint }
           - { name: Format check, script: format:check }
+          - { name: Unit tests, script: test }
     steps:
       - uses: actions/checkout@v7
 
