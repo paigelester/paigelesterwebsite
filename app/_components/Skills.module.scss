@@ -1,0 +1,40 @@
+@use "../styles/variables" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.heading {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $black;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
+.groupName {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $black;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  list-style: none;
+}
+
+.skill {
+  padding: $space-3xs $space-xs;
+  border-radius: $radius-full;
+  background: $surface-muted;
+  font-size: $font-size-base;
+  color: $foreground;
+}

@@ -42,10 +42,22 @@ export type WorkExperience = {
   roles: readonly Role[];
 };
 
+/** A named group of related skills, e.g. "Languages". */
+export type SkillGroup = {
+  name: string;
+  skills: readonly string[];
+};
+
+/** Paige's abilities and technologies, grouped by kind. */
+export type Skills = {
+  groups: readonly SkillGroup[];
+};
+
 /** Paige's CV, composed of one type per CV Section. */
 export type CV = {
   personalStatement: PersonalStatement;
   workExperience: WorkExperience;
+  skills: Skills;
 };
 
 // Placeholder content until launch.
@@ -78,6 +90,28 @@ export const cv: CV = {
         dates: { start: "2018-07", end: "2018-07" },
         description:
           "Joined the web team for a summer month, fixing bugs and improving accessibility."
+      }
+    ]
+  },
+  skills: {
+    groups: [
+      {
+        name: "Languages",
+        skills: ["TypeScript", "JavaScript", "HTML", "CSS", "C#"]
+      },
+      {
+        name: "Frameworks",
+        skills: ["React", "Next.js", "Node.js", "Unity"]
+      },
+      {
+        name: "Tooling",
+        skills: [
+          "Git",
+          "GitHub",
+          "GitHub Actions",
+          "Jira",
+          "Visual Studio Code"
+        ]
       }
     ]
   }
