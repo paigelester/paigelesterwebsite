@@ -18,6 +18,10 @@ describe("formatDateRange", () => {
     );
   });
 
+  test("shows a range given in years only as years", () => {
+    expect(formatDateRange({ start: "2012", end: "2014" })).toBe("2012 – 2014");
+  });
+
   test("names every month of the year", () => {
     const months = [
       "01",

@@ -18,11 +18,15 @@ type Month =
 /** A calendar month, written as year and month, e.g. "2021-03". */
 export type YearMonth = `${number}-${Month}`;
 
-/** The months something ran for. A range without an end is ongoing. */
-export type DateRange = {
-  start: YearMonth;
-  end?: YearMonth;
-};
+/** A calendar year on its own, e.g. "2012". */
+export type Year = `${number}`;
+
+/**
+ * The months, or years, something ran for. A range without an end is ongoing.
+ * Both ends are given to the same precision.
+ */
+export type DateRange =
+  { start: YearMonth; end?: YearMonth } | { start: Year; end?: Year };
 
 /** The short introductory summary at the top of the CV. */
 export type PersonalStatement = {
@@ -56,7 +60,8 @@ export type Skills = {
 
 /** A qualification Paige gained and where it was gained. */
 export type Qualification = {
-  name: string;
+  /** Left out when the CV names only the school. */
+  name?: string;
   institution: string;
   dates: DateRange;
 };
@@ -225,14 +230,12 @@ export const cv: CV = {
   education: {
     qualifications: [
       {
-        name: "BSc (Hons) Computer Science",
-        institution: "Example University",
-        dates: { start: "2015-09", end: "2018-06" }
+        institution: "St Joseph’s Catholic Academy",
+        dates: { start: "2012", end: "2014" }
       },
       {
-        name: "A Levels: Mathematics, Computing, Physics",
-        institution: "Sample Sixth Form College",
-        dates: { start: "2013-09", end: "2015-06" }
+        institution: "Hebburn Comprehensive School",
+        dates: { start: "2007", end: "2012" }
       }
     ]
   },

@@ -1,4 +1,4 @@
-import type { DateRange, YearMonth } from "@/content/cv";
+import type { DateRange, Year, YearMonth } from "@/content/cv";
 
 const monthAbbreviations = [
   "Jan",
@@ -15,18 +15,19 @@ const monthAbbreviations = [
   "Dec"
 ] as const;
 
-function formatYearMonth(yearMonth: YearMonth): string {
-  const [year, month] = yearMonth.split("-");
-  return `${monthAbbreviations[Number(month) - 1]} ${year}`;
+function formatDate(date: YearMonth | Year): string {
+  const [year, month] = date.split("-");
+  return month ? `${monthAbbreviations[Number(month) - 1]} ${year}` : year;
 }
 
 /**
  * A human-readable date range, e.g. "Mar 2021 – Present" for an ongoing role,
- * "Jan 2019 – Feb 2021" for a finished one, or "Jun 2020" for a single month.
+ * "Jan 2019 – Feb 2021" for a finished one, "Jun 2020" for a single month, or
+ * "2012 – 2014" for a range given in years only.
  */
 export function formatDateRange({ start, end }: DateRange): string {
   if (end === start) {
-    return formatYearMonth(start);
+    return formatDate(start);
   }
-  return `${formatYearMonth(start)} – ${end ? formatYearMonth(end) : "Present"}`;
+  return `${formatDate(start)} – ${end ? formatDate(end) : "Present"}`;
 }

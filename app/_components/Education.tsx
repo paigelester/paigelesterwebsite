@@ -15,10 +15,12 @@ export default function Education({ education }: Props) {
       <ol className={styles.qualifications}>
         {education.qualifications.map((qualification) => (
           <li
-            key={`${qualification.institution}-${qualification.name}-${qualification.dates.start}`}
+            key={`${qualification.institution}-${qualification.name ?? ""}-${qualification.dates.start}`}
             className={styles.qualification}
           >
-            <h3 className={styles.name}>{qualification.name}</h3>
+            {qualification.name && (
+              <h3 className={styles.name}>{qualification.name}</h3>
+            )}
             <p className={styles.institution}>{qualification.institution}</p>
             <p className={styles.dates}>
               {formatDateRange(qualification.dates)}
