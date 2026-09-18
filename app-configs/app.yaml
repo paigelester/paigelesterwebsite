@@ -1,6 +1,31 @@
-runtime: nodejs12
+# Static files only; no application code runs (ADR 0001).
+runtime: python313
 
-resources:
-  cpu: 1
-  memory_gb: 0.5
-  disk_size_gb: 10
+handlers:
+  - url: /
+    static_files: index.html
+    upload: index\.html
+    secure: always
+    http_headers:
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  - url: /_next
+    static_dir: _next
+    secure: always
+    http_headers:
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  - url: /(.*\.(html|txt|pdf|svg|png|ico))$
+    static_files: \1
+    upload: .*\.(html|txt|pdf|svg|png|ico)$
+    secure: always
+    http_headers:
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  # Anything else is an unknown route.
+  - url: /.*
+    static_files: 404.html
+    upload: 404\.html
+    secure: always
+    http_headers:
+      Strict-Transport-Security: max-age=31536000; includeSubDomains

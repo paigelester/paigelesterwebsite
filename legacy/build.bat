@@ -1,7 +1,5 @@
-mkdir dist
+@echo off
+rem Run from the repo root. Builds the static site into out\ and adds app.yaml for gcloud.
 
-xcopy frontend\build dist /E /Y /F
-copy app-configs\app.yaml dist
-copy server\package.json dist
-copy server\package-lock.json dist
-copy server\server.js dist
+call npm run build || exit /b 1
+copy /Y app-configs\app.yaml out\

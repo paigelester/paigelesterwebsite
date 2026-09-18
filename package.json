@@ -17,7 +17,9 @@
     "prepare": "husky",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check:overrides": "node ci/check-overrides.ts"
+    "check:overrides": "node ci/check-overrides.ts",
+    "build:appengine": "legacy\\build.bat",
+    "deploy": "legacy\\build.bat && legacy\\deploy.bat"
   },
   "dependencies": {
     "next": "16.3.5",
