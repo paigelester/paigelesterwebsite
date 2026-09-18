@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import WwwRedirect from "./_components/WwwRedirect";
+import { canonicalOrigin } from "./_lib/canonicalOrigin";
 import "./globals.scss";
 
 const geistSans = Geist({
@@ -13,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://paigelester.co.uk"),
+  metadataBase: canonicalOrigin,
   title: "Paige Lester - CV",
   description:
     "The CV of Paige Lester, software developer: work experience, skills, education and links.",
@@ -24,7 +26,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <WwwRedirect />
+        {children}
+      </body>
     </html>
   );
 }
