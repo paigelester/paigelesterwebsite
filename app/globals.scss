@@ -14,6 +14,18 @@
   padding: 0;
 }
 
+// Print styling, used for the CV PDF (ci/print-cv.ts) and the browser's print.
+@page {
+  size: $page-size;
+  margin: $page-margin;
+}
+
+@media print {
+  html {
+    font-size: $print-font-size;
+  }
+}
+
 img,
 svg {
   display: block;

@@ -59,3 +59,9 @@ $breakpoint-md: 48rem;
 
 // Motion
 $duration-fast: 150ms;
+
+// Print
+$page-size: A4;
+$page-margin: 15mm;
+// The root font size in print, which every rem-based size scales from.
+$print-font-size: 10pt;

@@ -8,6 +8,7 @@
 }
 
 .heading {
+  @include print-keep-with-next;
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $black;
@@ -22,4 +23,11 @@
 
 .link {
   @include text-link;
+
+  // A printed CV can't be clicked, so spell out where each link goes.
+  @media print {
+    &::after {
+      content: " (" attr(href) ")";
+    }
+  }
 }

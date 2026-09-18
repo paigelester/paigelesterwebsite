@@ -1,4 +1,5 @@
 @use "./styles/variables" as *;
+@use "./styles/mixins" as *;
 
 .main {
   display: flex;
@@ -8,6 +9,20 @@
   max-width: $width-3xl;
   margin: 0 auto;
   padding: $space-xl $space-md;
+
+  @media print {
+    max-width: none;
+    // The @page margin frames the printed CV.
+    padding: 0;
+  }
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs $space-lg;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .name {
@@ -16,4 +31,13 @@
   line-height: $line-height-3xl;
   letter-spacing: $letter-spacing-tight;
   color: $black;
+}
+
+.download {
+  @include text-link;
+
+  // The PDF is the printed page, so it doesn't link to itself.
+  @media print {
+    display: none;
+  }
 }

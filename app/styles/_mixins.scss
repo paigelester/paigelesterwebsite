@@ -1,5 +1,19 @@
 @use "./variables" as *;
 
+// Keeps an entry on one printed page rather than splitting it across two.
+@mixin print-unbroken {
+  @media print {
+    break-inside: avoid;
+  }
+}
+
+// Keeps a heading on the same printed page as the content after it.
+@mixin print-keep-with-next {
+  @media print {
+    break-after: avoid;
+  }
+}
+
 // An underlined text link with a visible keyboard focus ring.
 @mixin text-link {
   font-size: $font-size-base;

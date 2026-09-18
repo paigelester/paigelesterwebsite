@@ -1,4 +1,5 @@
 @use "../styles/variables" as *;
+@use "../styles/mixins" as *;
 
 .section {
   display: flex;
@@ -7,6 +8,7 @@
 }
 
 .heading {
+  @include print-keep-with-next;
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $black;
@@ -20,6 +22,7 @@
 }
 
 .qualification {
+  @include print-unbroken;
   display: flex;
   flex-direction: column;
   gap: $space-3xs;

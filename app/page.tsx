@@ -9,7 +9,17 @@ import styles from "./page.module.scss";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1 className={styles.name}>Paige Lester</h1>
+      <header className={styles.header}>
+        <h1 className={styles.name}>Paige Lester</h1>
+        {/* Printed from this page at build time by ci/print-cv.ts. */}
+        <a
+          href="/cv.pdf"
+          download="Paige Lester CV.pdf"
+          className={styles.download}
+        >
+          Download CV (PDF)
+        </a>
+      </header>
       <PersonalStatement personalStatement={cv.personalStatement} />
       <WorkExperience workExperience={cv.workExperience} />
       <Skills skills={cv.skills} />

@@ -55,6 +55,9 @@ jobs:
 
       - run: npm ci
 
+      # The build prints the CV page to cv.pdf with Playwright's Chromium.
+      - run: npx playwright install --with-deps --only-shell chromium
+
       - run: npm run build
 
       # The static export, reused by later jobs such as end-to-end and deploy.
