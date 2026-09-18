@@ -1,10 +1,10 @@
 @use "./styles/variables" as *;
 @use "./styles/mixins" as *;
 
+// No gap between sections: each sets its own spacing, as in the mockup.
 .main {
   display: flex;
   flex-direction: column;
-  gap: $space-lg;
   width: 100%;
   max-width: $width-3xl;
   margin: 0 auto;
@@ -17,20 +17,10 @@
   }
 }
 
+// The name is in the Intro, so the download link sits on its own.
 .header {
   display: flex;
-  flex-wrap: wrap;
-  gap: $space-xs $space-lg;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
-.name {
-  font-size: $font-size-3xl;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-3xl;
-  letter-spacing: $letter-spacing-tight;
-  color: var(--ink);
+  justify-content: flex-end;
 }
 
 .download {

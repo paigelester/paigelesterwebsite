@@ -17,8 +17,8 @@ export default function Print() {
   return (
     <main className={styles.main}>
       <h1 className={styles.name}>Paige Lester</h1>
-      <Intro intro={cv.intro} />
-      <Work work={cv.work} />
+      <Intro variant="print" intro={cv.intro} />
+      <Work variant="print" work={cv.work} />
       <Skills skills={cv.skills} />
       <Education education={cv.education} />
       <Links links={cv.links} />

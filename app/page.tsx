@@ -11,7 +11,6 @@ export default function Home() {
     <SitePage>
       <main className={styles.main}>
         <header className={styles.header}>
-          <h1 className={styles.name}>Paige Lester</h1>
           {/* Printed from the /print page at build time by ci/print-cv.ts. */}
           <a
             href="/cv.pdf"
@@ -21,8 +20,8 @@ export default function Home() {
             Download CV (PDF)
           </a>
         </header>
-        <Intro intro={cv.intro} />
-        <Work work={cv.work} />
+        <Intro variant="site" intro={cv.intro} links={cv.links} />
+        <Work variant="site" work={cv.work} />
         <Skills skills={cv.skills} />
         <Contact education={cv.education} links={cv.links} />
       </main>

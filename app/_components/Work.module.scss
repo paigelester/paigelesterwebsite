@@ -5,6 +5,12 @@
   display: flex;
   flex-direction: column;
   gap: $space-sm;
+
+  // The heading and roles set their own spacing on the site.
+  @include on-site {
+    gap: 0;
+    padding: $site-work-padding;
+  }
 }
 
 .heading {
@@ -13,13 +19,24 @@
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $black;
+
+  @include on-site {
+    margin-bottom: $site-work-label-margin-bottom;
+  }
 }
 
+// On the site, a timeline: a line down the left with a marker per role.
 .roles {
   display: flex;
   flex-direction: column;
   gap: $space-lg;
   list-style: none;
+
+  @include on-site {
+    gap: $site-work-role-gap;
+    padding-left: $site-work-timeline-indent;
+    border-left: $border-width solid var(--line);
+  }
 }
 
 .role {
@@ -27,6 +44,51 @@
   display: flex;
   flex-direction: column;
   gap: $space-3xs;
+
+  @include on-site {
+    position: relative;
+    display: block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: $site-work-marker-top;
+      // Centred on the timeline's line.
+      left: calc(
+        -1 *
+          (
+            $site-work-timeline-indent + $border-width / 2 +
+              $site-work-marker-size / 2
+          )
+      );
+      width: $site-work-marker-size;
+      height: $site-work-marker-size;
+      border-radius: $radius-full;
+      background: var(--chip);
+    }
+  }
+}
+
+// Site only: the current role's marker is highlighted. Guarded like the
+// marker, so it outranks it.
+.current::before {
+  @include on-site {
+    background: var(--accent);
+    box-shadow: 0 0 0 $site-work-marker-glow
+      color-mix(
+        in oklab,
+        var(--accent) $site-work-marker-glow-strength,
+        transparent
+      );
+  }
+}
+
+// Site only: dates and organisation, above the title.
+.meta {
+  margin-bottom: $site-work-meta-margin-bottom;
+  font-family: $font-mono;
+  font-size: $site-mono-small-font-size;
+  color: var(--muted);
 }
 
 .title {
@@ -35,27 +97,23 @@
   color: $black;
 
   @include on-site {
+    margin-bottom: $site-work-title-margin-bottom;
+    font-size: $site-work-title-font-size;
+    letter-spacing: $site-work-title-letter-spacing;
     color: var(--ink);
   }
 }
 
+// PDF page only, from here to .dates.
 .organisation {
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
   color: $foreground;
-
-  @include on-site {
-    color: var(--muted);
-  }
 }
 
 .dates {
   font-size: $font-size-base;
   color: $zinc-600;
-
-  @include on-site {
-    color: var(--muted);
-  }
 }
 
 .highlights {
@@ -65,6 +123,13 @@
   margin-top: $space-2xs;
   padding-left: $space-md;
   list-style: disc;
+
+  @include on-site {
+    gap: $site-work-highlight-gap;
+    max-width: $site-work-highlights-max-width;
+    margin-top: 0;
+    padding-left: $site-work-highlights-indent;
+  }
 }
 
 .highlight {
@@ -73,6 +138,8 @@
   color: $zinc-600;
 
   @include on-site {
+    font-size: $site-work-highlight-font-size;
+    line-height: $site-work-highlight-line-height;
     color: var(--body);
   }
 }

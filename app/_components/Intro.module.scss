@@ -5,14 +5,38 @@
   display: flex;
   flex-direction: column;
   gap: $space-sm;
+
+  // The job titles, name and paragraphs set their own spacing on the site.
+  @include on-site {
+    display: block;
+    padding: $site-intro-padding;
+    border-bottom: $border-width solid var(--line);
+  }
 }
 
 .heading {
   @include print-keep-with-next;
-  @include site-section-heading;
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $black;
+}
+
+// Site only: .jobTitles, .name and .email.
+.jobTitles {
+  margin-bottom: $site-intro-job-titles-margin-bottom;
+  font-family: $font-mono;
+  font-size: $site-label-font-size;
+  letter-spacing: $site-label-letter-spacing;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.name {
+  margin-bottom: $site-intro-name-margin-bottom;
+  font-size: $site-intro-name-font-size;
+  font-weight: $font-weight-semibold;
+  line-height: $site-intro-name-line-height;
+  letter-spacing: $site-intro-name-letter-spacing;
 }
 
 .paragraph {
@@ -21,6 +45,42 @@
   color: $zinc-600;
 
   @include on-site {
+    max-width: $site-intro-paragraph-max-width;
+    margin-bottom: $site-intro-paragraph-gap;
+    font-size: $site-intro-paragraph-font-size;
+    line-height: $site-intro-paragraph-line-height;
     color: var(--body);
+    text-wrap: pretty;
+
+    &:last-of-type {
+      margin-bottom: $site-intro-paragraphs-margin-bottom;
+    }
+  }
+}
+
+.email {
+  display: inline-block;
+  padding-bottom: $space-3xs;
+  border-bottom: $border-width solid var(--chip);
+  font-family: $font-mono;
+  font-size: $site-intro-email-font-size;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color $duration-fast;
+
+  &:hover {
+    color: var(--ink);
+  }
+
+  &:focus-visible {
+    outline: $focus-ring-width solid var(--accent);
+    outline-offset: $focus-ring-offset;
+  }
+
+  // Tall enough to tap, with the text kept down on its underline.
+  @media (max-width: $breakpoint-phone) {
+    display: inline-flex;
+    align-items: flex-end;
+    min-height: $site-tap-target;
   }
 }
