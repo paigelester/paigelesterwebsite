@@ -1,5 +1,9 @@
 @AGENTS.md
 
+## Git
+
+Keep history linear. Integrate work by rebasing or squashing: `git pull --rebase`, `git rebase`, then `git merge --ff-only`. Merge commits are not allowed.
+
 ## Agent skills
 
 ### Issue tracker
