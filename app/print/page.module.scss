@@ -1,5 +1,4 @@
-@use "./styles/variables" as *;
-@use "./styles/mixins" as *;
+@use "../styles/variables" as *;
 
 .main {
   display: flex;
@@ -17,27 +16,10 @@
   }
 }
 
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $space-xs $space-lg;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
 .name {
   font-size: $font-size-3xl;
   font-weight: $font-weight-semibold;
   line-height: $line-height-3xl;
   letter-spacing: $letter-spacing-tight;
   color: $black;
-}
-
-.download {
-  @include text-link;
-
-  // A printed page has no use for a download link.
-  @media print {
-    display: none;
-  }
 }

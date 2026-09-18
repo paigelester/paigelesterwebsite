@@ -1,6 +1,8 @@
 /**
- * Prints the built CV page to out/cv.pdf, so the download is always the page
- * itself. Runs after `next build` as part of `npm run build`.
+ * Prints the built /print page to out/cv.pdf. That page renders the same CV
+ * data as the home page in the PDF's own layout, so the PDF's content keeps
+ * up with the site while its look stays fixed. Runs after `next build` as
+ * part of `npm run build`.
  *
  * Usage: npm run build (or npm run build:pdf after a build)
  *
@@ -51,16 +53,16 @@ try {
   const failed: string[] = [];
   page.on("requestfailed", (request) => failed.push(request.url()));
 
-  await page.goto(`${siteOrigin}/`, { waitUntil: "networkidle" });
+  await page.goto(`${siteOrigin}/print.html`, { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
 
   if (failed.length > 0) {
-    throw new Error(`The CV page failed to load:\n${failed.join("\n")}`);
+    throw new Error(`The /print page failed to load:\n${failed.join("\n")}`);
   }
 
   // Page size and margins come from the @page rule in the print styles.
   await page.pdf({ path: pdfPath, preferCSSPageSize: true });
-  console.log(`Printed the CV page to ${relative(process.cwd(), pdfPath)}`);
+  console.log(`Printed the /print page to ${relative(process.cwd(), pdfPath)}`);
 } finally {
   await browser.close();
 }

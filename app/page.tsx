@@ -11,7 +11,7 @@ export default function Home() {
     <main className={styles.main}>
       <header className={styles.header}>
         <h1 className={styles.name}>Paige Lester</h1>
-        {/* Printed from this page at build time by ci/print-cv.ts. */}
+        {/* Printed from the /print page at build time by ci/print-cv.ts. */}
         <a
           href="/cv.pdf"
           download="Paige Lester CV.pdf"
