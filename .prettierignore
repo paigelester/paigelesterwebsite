@@ -3,4 +3,7 @@
 # The 2020 codebase, kept for reference until it is removed
 legacy/
 
+# Design mockups exported from Claude Design, kept verbatim as a reference
+docs/design/
+
 package-lock.json

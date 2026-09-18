@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<title>Paige Lester — CV</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta name="description" content="Engineering Manager with 12 years in software across regulated FinTech and scientific instrument software. People leadership, kept close to the code.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paige Lester — Engineering Manager">
+<meta property="og:description" content="Engineering manager with 10+ years building software for regulated FinTech and scientific instruments.">
+<meta property="og:image" content="./og-preview.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#15101b;--ink:#ece6f0;--accent:#e79bbb;--line:rgba(255,255,255,.12);
+--muted:rgba(236,230,240,.72);--dim:rgba(236,230,240,.62);--body:rgba(236,230,240,.78);
+--chip:rgba(255,255,255,.18);--btnbg:#e79bbb;--btnfg:#15101b;--dot:rgba(231,155,187,.3);
+--panel:#1d1724;--glow:rgba(231,155,187,.10);
+}
+[data-theme="light"]{
+--bg:#e4d7dc;--ink:#1b1018;--accent:#9c3a68;--line:rgba(27,16,24,.15);
+--muted:rgba(27,16,24,.7);--dim:rgba(27,16,24,.6);--body:rgba(27,16,24,.8);
+--chip:rgba(27,16,24,.2);--btnbg:#1b1018;--btnfg:#e4d7dc;--dot:rgba(156,58,104,.24);
+--panel:#efe4e8;--glow:rgba(156,58,104,.07);
+}
+html{scroll-behavior:smooth}
+body{margin:0;background-color:var(--bg);color:var(--ink);
+background-image:radial-gradient(var(--dot) 1.4px,transparent 1.4px);background-size:48px 48px;
+font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--ink)}
+@keyframes pl-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+@media (max-width:920px){
+ [data-grid="main"]{grid-template-columns:minmax(0,1fr) !important}
+ [data-rail]{border-right:none !important;border-bottom:1px solid var(--line) !important;padding:0 !important;position:sticky;top:var(--hdrh,53px);z-index:30;background:color-mix(in oklab,var(--bg) 94%,transparent);backdrop-filter:blur(10px)}
+ [data-railinner]{position:static !important;flex-direction:row !important;align-items:center;gap:18px !important;padding:11px 20px;overflow-x:auto;white-space:nowrap}
+ [data-railtitle]{display:none !important}
+ [data-social]{margin:0 0 0 auto !important;padding:0 !important;border-top:none !important;flex-direction:row !important;gap:14px !important}
+ [data-main]{padding:0 20px !important}
+ [data-nav] span{display:none}
+}
+@media (max-width:620px){
+ header button{min-height:44px;padding-top:0 !important;padding-bottom:0 !important;display:inline-flex;align-items:center;justify-content:center}
+ header button[title="Toggle theme"]{width:44px !important;height:44px !important}
+ [data-railinner] a[data-nav]{min-height:44px;display:flex;align-items:center;padding:0}
+ [data-socialmobile] a,#contact a[href^="mailto"],#contact button{min-height:44px;display:inline-flex;align-items:center;padding-top:0 !important;padding-bottom:0 !important}
+ [data-socialmobile]{display:flex !important}
+ [data-skills]{grid-template-columns:minmax(0,1fr) !important;gap:8px 0 !important}
+ [data-skills] > div:nth-child(odd){margin-top:12px}
+ [data-skills] > div:nth-child(1){margin-top:0}
+ [data-dothost]{display:contents !important}
+ [data-dothost] button{order:1}
+ [data-hdrctl]{order:2;margin-left:auto}
+ [data-dotline]{order:3;flex:1 1 100% !important;white-space:normal !important;text-overflow:clip !important;height:31px;overflow:hidden;line-height:1.4;font-size:11px;margin-top:-2px}
+ [data-social]{display:none !important}
+ [data-main] section{padding-left:0;padding-right:0}
+}
+@media (max-width:480px){
+ header{padding:10px 16px !important;gap:10px !important}
+ [data-main]{padding:0 16px !important}
+}
+@media print{
+ body{background:#fff !important;color:#000 !important;background-image:none !important}
+ [data-print="hide"]{display:none !important}
+}
+</style>
+</helmet>
+
+<header data-print="hide" style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 28px;border-bottom:1px solid var(--line);background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);flex-wrap:wrap">
+<div data-dothost="1" style="display:flex;align-items:center;gap:12px;min-width:0;flex:1">
+<button onClick="{{ poke }}" title="Ask Dot" style="cursor:pointer;flex:none;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.02em;border:1px solid var(--chip);background:transparent;color:var(--accent);border-radius:5px;padding:6px 10px;transition:.15s" style-hover="border-color:var(--accent);background:color-mix(in oklab,var(--accent) 12%,transparent)">{{ face }}</button>
+<div data-dotline="1" style="font-family:'DM Mono',monospace;font-size:11.5px;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" data-ref="advice">hi, I’m Dot — click me for an opinion</div>
+</div>
+<div data-hdrctl="1" style="display:flex;align-items:center;gap:12px;font-family:'DM Mono',monospace;font-size:11.5px">
+
+<button onClick="{{ toggleTheme }}" title="Toggle theme" style="cursor:pointer;font-size:13px;border:1px solid var(--chip);background:transparent;border-radius:5px;width:32px;height:31px;color:var(--muted)" style-hover="border-color:var(--accent);color:var(--accent)">◐</button>
+<button onClick="{{ downloadPdf }}" style="cursor:pointer;font-family:'DM Mono',monospace;font-size:11.5px;border:none;background:var(--btnbg);color:var(--btnfg);font-weight:600;padding:9px 16px;border-radius:5px;letter-spacing:.08em;text-transform:uppercase" style-hover="opacity:.85">Download CV ↓</button>
+</div>
+</header>
+
+<div style="position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr);max-width:1240px;margin:0 auto">
+<div data-grid="main" style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:0">
+
+<nav data-print="hide" data-ref="rail" data-rail="1" style="border-right:1px solid var(--line);padding:48px 0 48px 28px">
+<div data-railinner="1" style="position:sticky;top:96px;display:flex;flex-direction:column;gap:2px;font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase">
+<div data-railtitle="1" style="color:var(--dim);margin-bottom:14px">Contents</div>
+<a href="#intro" data-nav="intro" style="display:flex;align-items:center;gap:10px;padding:7px 0;color:var(--muted)"><span data-navline="intro" style="width:16px;height:1px;background:var(--line);transition:background .2s,width .2s"></span>Intro</a>
+<a href="#work" data-nav="work" style="display:flex;align-items:center;gap:10px;padding:7px 0;color:var(--muted)"><span data-navline="work" style="width:16px;height:1px;background:var(--line);transition:background .2s,width .2s"></span>Work</a>
+<a href="#projects" data-nav="projects" style="display:flex;align-items:center;gap:10px;padding:7px 0;color:var(--muted)"><span data-navline="projects" style="width:16px;height:1px;background:var(--line);transition:background .2s,width .2s"></span>Projects</a>
+<a href="#skills" data-nav="skills" style="display:flex;align-items:center;gap:10px;padding:7px 0;color:var(--muted)"><span data-navline="skills" style="width:16px;height:1px;background:var(--line);transition:background .2s,width .2s"></span>Skills</a>
+<a href="#contact" data-nav="contact" style="display:flex;align-items:center;gap:10px;padding:7px 0;color:var(--muted)"><span data-navline="contact" style="width:16px;height:1px;background:var(--line);transition:background .2s,width .2s"></span>Contact</a>
+<div data-social="1" style="margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;text-transform:none;letter-spacing:0">
+<a href="https://github.com" style="color:var(--muted);display:flex;align-items:center;gap:9px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.9 18.3 5.2 18.3 5.2c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"></path></svg>
+GitHub</a>
+<a href="https://linkedin.com" style="color:var(--muted);display:flex;align-items:center;gap:9px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"></path></svg>
+LinkedIn</a>
+</div>
+</div>
+</nav>
+
+<main data-main="1" style="padding:0 28px 0 44px;min-width:0">
+
+<section id="intro" style="padding:76px 0 52px;border-bottom:1px solid var(--line);scroll-margin-top:80px">
+<div style="font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px">Engineering Manager · Principal Software Engineer</div>
+<h1 style="font-size:clamp(56px,9vw,104px);line-height:.9;font-weight:600;letter-spacing:-.045em;margin:0 0 30px">Paige<br>Lester</h1>
+<p style="max-width:660px;font-size:17px;line-height:1.7;margin:0 0 18px;color:var(--body);text-wrap:pretty">Engineering Manager with 12 years in software, spanning regulated FinTech and scientific instrument software. I line-manage a team of five delivering three .NET and Angular applications against three separate release schedules, having come to management through the code — Senior and then Principal Engineer on the same team.</p>
+<p style="max-width:660px;font-size:17px;line-height:1.7;margin:0 0 28px;color:var(--body);text-wrap:pretty">That is where I intend to stay: close enough to the technical detail to make architectural calls and to mentor engineers through real work rather than from a distance. I am looking for an engineering management role with that same balance of people leadership and technical involvement — the domain matters less to me than a well-defined problem.</p>
+<a href="mailto:paigelester7@gmail.com" style="font-family:'DM Mono',monospace;font-size:14px;border-bottom:1px solid var(--chip);display:inline-block;padding-bottom:2px">paigelester7@gmail.com</a>
+</section>
+
+<section id="work" style="padding:48px 0 40px;scroll-margin-top:80px">
+<div style="font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:32px">Work</div>
+<div style="border-left:1px solid var(--line);padding-left:40px;display:flex;flex-direction:column;gap:36px">
+
+<div style="position:relative">
+<div style="position:absolute;left:-44px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklab,var(--accent) 18%,transparent)"></div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:7px">Nov 2024 — Present · Waters Corporation</div>
+<h3 style="font-size:clamp(24px,3.2vw,31px);font-weight:600;letter-spacing:-.03em;margin:0 0 14px">Engineering Manager</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.7;color:var(--body);max-width:700px">
+<li>Line manager to five — four developers and the team's tech lead — on the team I previously worked in as Senior and Principal Engineer</li>
+<li>Progressed two engineers from mid-level to senior through structured mentoring, handing over technical analysis and stepping back to let them reach their own conclusions</li>
+<li>Driving a cross-department pilot, without line authority, to remove a documentation and translation bottleneck adding three to six weeks to the end of every release</li>
+<li>Won buy-in from that department by supplying the technical capability they lacked rather than imposing process: moving them toward docs-as-code, continuous translation and AI style-guide-driven pre-review in place of sequential manual gates</li>
+<li>Managed delivery of three Waters Connect applications against three separate release schedules with a single team, where most teams in the business carry one; shipped 8 releases</li>
+<li>Partnered with the Product Owner to run a multi-week customer feedback programme on a major release, rebuilding confidence among users who had long felt unheard — described at customer conferences as the biggest improvement to the application in years</li>
+</ul>
+</div>
+
+<div style="position:relative">
+<div style="position:absolute;left:-44px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--chip)"></div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:7px">Mar 2024 — Nov 2024 · Waters Corporation</div>
+<h3 style="font-size:clamp(24px,3.2vw,31px);font-weight:600;letter-spacing:-.03em;margin:0 0 14px">Principal Software Engineer</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.7;color:var(--body);max-width:700px">
+<li>Promoted to Principal on the same team and applications, with a remit extending across departments</li>
+<li>Led the first release of the team's third application from scratch</li>
+<li>Drove genuine adoption of the UX department's shared UI component library — mandated across Waters Connect but barely used in practice — and worked directly with that team to improve the integration path</li>
+<li>Extended the shared-package programme begun as Senior Engineer into the wider estate</li>
+<li>Mentored less experienced developers through pairing and mob programming, widening the group of engineers confident to work across all three applications</li>
+</ul>
+</div>
+
+<div style="position:relative">
+<div style="position:absolute;left:-44px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--chip)"></div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:7px">Jan 2023 — Mar 2024 · Waters Corporation</div>
+<h3 style="font-size:clamp(24px,3.2vw,31px);font-weight:600;letter-spacing:-.03em;margin:0 0 14px">Senior Software Engineer</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.7;color:var(--body);max-width:700px">
+<li>One of four developers in a seven-person team owning three Waters Connect applications in .NET and Angular, where most teams in the business own one and some share a single application between several teams</li>
+<li>Absorbed the team's growth from two applications to three with no additional headcount by replacing cloned code with shared packages, the first genuine code sharing across the Waters Connect estate</li>
+<li>Diagnosed the underlying maintenance problem: code copied between applications and teams, leaving quality that varied with the age of each copy, and engineers routing around areas they could not follow</li>
+<li>Drove adoption of the shared packages beyond the immediate team to at least four others</li>
+<li>Rebuilt the processing workflows behind the platform's algorithms and set the clean-code and maintenance standards the team works to</li>
+</ul>
+</div>
+
+<div style="position:relative">
+<div style="position:absolute;left:-44px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--chip)"></div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:7px">Jan 2022 — Jan 2023 · Caspian</div>
+<h3 style="font-size:clamp(24px,3.2vw,31px);font-weight:600;letter-spacing:-.03em;margin:0 0 14px">Senior Developer</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.7;color:var(--body);max-width:700px">
+<li>Squad lead of an agile development team containing Developers, DevOps, Testers and Data Scientists</li>
+<li>Architecting software for Tier 1 banks in AML investigations in AWS using Docker, Kubernetes, AWS Lambda, s3 buckets, SNS/SQS</li>
+<li>Setting CI Bitbucket pipelines to ensure code quality with automated testing and SonarCloud and checking for potential vulnerabilities with Snyk</li>
+<li>Developed microservice communication with message broker RabbitMQ using MassTransit in .NET and pika in Python</li>
+</ul>
+</div>
+
+<div style="position:relative">
+<div style="position:absolute;left:-44px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--chip)"></div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:7px">Dec 2016 — Jan 2022 · Caspian</div>
+<h3 style="font-size:clamp(24px,3.2vw,31px);font-weight:600;letter-spacing:-.03em;margin:0 0 14px">Developer</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.7;color:var(--body);max-width:700px">
+<li>Machine Learning engineering translating Data Science research and experimentation into unit tested production quality software in Python including packages such as: SkLearn, Tensorflow and Spacy</li>
+<li>Developed a classifier training pipeline using Luigi supporting SkLearn and Tensorflow models including stages for labelling data, hold out, consensus, preprocessing, training, predicting and model performance reporting</li>
+<li>Developed customer facing tutorials for bank interface translated into multiple languages and compatible with bidirectionality</li>
+<li>Developed client facing demos to secure new business using React and Typescript in GCP's App Engine</li>
+</ul>
+</div>
+
+<div style="position:relative">
+<div style="position:absolute;left:-44px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--chip)"></div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:7px">Dec 2014 — Dec 2016 · Caspian</div>
+<h3 style="font-size:clamp(24px,3.2vw,31px);font-weight:600;letter-spacing:-.03em;margin:0 0 14px">Simulation Developer</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.7;color:var(--body);max-width:700px">
+<li>Mentored junior simulation developers</li>
+<li>Developed simulations for training bank staff in AML investigations</li>
+<li>Developed simulations for Health and Social Care</li>
+</ul>
+</div>
+
+<div style="position:relative">
+<div style="position:absolute;left:-44px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--chip)"></div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:7px">Aug 2014 — Dec 2014 · Caspian</div>
+<h3 style="font-size:clamp(24px,3.2vw,31px);font-weight:600;letter-spacing:-.03em;margin:0 0 14px">Quality Assurance Analyst</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.7;color:var(--body);max-width:700px">
+<li>Manual testing simulations</li>
+<li>Bug reporting in Jira</li>
+<li>Simulation developer training</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="projects" style="padding:44px 0 40px;border-top:1px solid var(--line);scroll-margin-top:80px">
+<div style="display:flex;align-items:baseline;gap:14px;margin-bottom:26px">
+<div style="font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Selected projects</div>
+<div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--dim)">— placeholder copy, pulled from your CV; send me the real write-ups</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
+<div style="border:1px solid var(--line);border-radius:8px;padding:22px" style-hover="border-color:var(--accent)">
+<div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Shared packages</div>
+<h4 style="font-size:19px;font-weight:600;letter-spacing:-.02em;margin:0 0 10px">Ending copy-paste across the estate</h4>
+<p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--body)">The first genuine code sharing across Waters Connect. Absorbed a third application with no additional headcount, and the packages spread to at least four other teams.</p>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)"><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">C# / .NET</span><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Angular</span><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Shared packages</span><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Cross-team delivery</span></div>
+
+</div>
+<div style="border:1px solid var(--line);border-radius:8px;padding:22px" style-hover="border-color:var(--accent)">
+<div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Docs-as-code pilot</div>
+<h4 style="font-size:19px;font-weight:600;letter-spacing:-.02em;margin:0 0 10px">Three to six weeks off every release</h4>
+<p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--body)">A cross-department pilot run without line authority: continuous translation and AI style-guide pre-review replacing sequential manual gates.</p>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)"><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Docs-as-code</span><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">CI pipelines</span><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Continuous translation</span><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Stakeholder buy-in</span></div>
+
+</div>
+<div style="border:1px solid var(--line);border-radius:8px;padding:22px" style-hover="border-color:var(--accent)">
+<div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Customer feedback</div>
+<h4 style="font-size:19px;font-weight:600;letter-spacing:-.02em;margin:0 0 10px">Rebuilding trust on a major release</h4>
+<p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--body)">A multi-week programme with the Product Owner, described at customer conferences as the biggest improvement to the application in years.</p>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)"><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Product partnership</span><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Customer research</span><span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--chip);border-radius:4px;padding:4px 8px;color:var(--muted)">Release management</span></div>
+
+</div>
+</div>
+</section>
+
+<section id="skills" style="padding:44px 0 40px;border-top:1px solid var(--line);scroll-margin-top:80px">
+<div style="font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:26px">Skills</div>
+<div data-skills="1" style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px 28px;font-size:15px;align-items:baseline">
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--dim)">Languages</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">C# / .NET / .NET Core</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">TypeScript / JavaScript</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Python</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">SQL / NoSQL</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">HTML5 / CSS3</span>
+</div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--dim)">Frameworks</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Angular</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">React</span>
+</div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--dim)">Cloud &amp; delivery</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">AWS / Lambda / S3 / SNS / SQS</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Docker / Kubernetes</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">CI pipelines</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Selenium / Cucumber / Wdio</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">SonarCloud</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Snyk</span>
+</div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--dim)">Tooling</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">GitHub</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Bitbucket</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Jira</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Confluence</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Docs-as-code</span>
+</div>
+<div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--dim)">Leadership</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Line management</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Mentoring and progression</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Scrum</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Cross-team delivery</span>
+<span style="border:1px solid var(--chip);border-radius:5px;padding:7px 14px">Release management</span>
+</div>
+</div>
+</section>
+
+<section id="contact" style="padding:44px 0 72px;border-top:1px solid var(--line);scroll-margin-top:80px">
+<div style="font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:26px">Contact</div>
+<h2 style="font-size:clamp(30px,4.6vw,46px);font-weight:600;letter-spacing:-.035em;margin:0 0 20px;max-width:620px;text-wrap:pretty">Looking for people leadership with the technical detail still attached.</h2>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:34px">
+<a href="mailto:paigelester7@gmail.com" style="border:1px solid var(--accent);color:var(--accent);border-radius:5px;padding:11px 18px;font-family:'DM Mono',monospace;font-size:13px" style-hover="background:var(--accent);color:var(--btnfg)">paigelester7@gmail.com</a>
+<button onClick="{{ downloadPdf }}" data-print="hide" style="cursor:pointer;border:1px solid var(--chip);background:transparent;color:var(--muted);border-radius:5px;padding:11px 18px;font-family:'DM Mono',monospace;font-size:13px" style-hover="border-color:var(--accent);color:var(--accent)">Download CV ↓</button>
+</div>
+<div data-socialmobile="1" style="display:none;flex-wrap:wrap;gap:12px;margin:-20px 0 34px">
+<a href="https://github.com" style="display:flex;align-items:center;gap:9px;border:1px solid var(--chip);color:var(--muted);border-radius:5px;padding:11px 18px;font-family:'DM Mono',monospace;font-size:13px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.9 18.3 5.2 18.3 5.2c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"></path></svg>
+GitHub</a>
+<a href="https://linkedin.com" style="display:flex;align-items:center;gap:9px;border:1px solid var(--chip);color:var(--muted);border-radius:5px;padding:11px 18px;font-family:'DM Mono',monospace;font-size:13px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"></path></svg>
+LinkedIn</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:36px;border-top:1px solid var(--line);padding-top:22px;font-size:14px;color:var(--muted)">
+<div>
+<div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:8px">Education</div>
+<div style="line-height:1.7">2012–2014 St Joseph's Catholic Academy<br>2007–2012 Hebburn Comprehensive School</div>
+</div>
+<div>
+<div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:8px">References</div>
+<div style="line-height:1.7">Available on request</div>
+</div>
+</div>
+<div data-print="hide" style="margin-top:30px;font-family:'DM Mono',monospace;font-size:11px;color:var(--dim)">&lt;!-- you opened the inspector. good instinct. there's a note for you in the console. --&gt;</div>
+</section>
+
+</main>
+</div>
+</div>
+
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  state = { theme: "dark", poked: 0, typed: "" };
+
+  static FACES = ["[•_•]", "[•ᴗ•]", "[o_o]", "[ಠ_ಠ]", "[^_^]", "[-_-]", "[•ᴗ•]"];
+  static ADVICE = [
+    "hi, I’m Dot — click me for an opinion",
+    "Code review is mentoring with a paper trail.",
+    "The bottleneck is almost never the typing.",
+    "A shared package beats a shared intention.",
+    "If only one person can fix it, that is the bug.",
+    "Estimates are a conversation, not a contract.",
+    "Promote people before they ask. It is cheaper.",
+    "Three release trains, one team. Ask me how.",
+    "The best process is the one nobody routes around.",
+    "Hand over the analysis. Keep your conclusions to yourself.",
+    "Copy-paste is a loan at a terrible interest rate.",
+    "You can be close to the code and still be the manager."
+  ];
+
+  typeOut(text) {
+    const node = document.querySelector('[data-ref="advice"]');
+    if (node) node.textContent = text;
+  }
+
+  componentDidMount() {
+    const saved = localStorage.getItem("pl-cv-theme");
+    if (saved === "light" || saved === "dark") this.applyTheme(saved);
+    const syncHdr = () => {
+      const hdr = document.querySelector("header");
+      if (hdr && hdr.offsetHeight) {
+        document.documentElement.style.setProperty("--hdrh", hdr.offsetHeight + "px");
+        if (!this._ro && window.ResizeObserver) {
+          this._ro = new ResizeObserver(() => {
+            const h = document.querySelector("header");
+            if (h && h.offsetHeight) document.documentElement.style.setProperty("--hdrh", h.offsetHeight + "px");
+          });
+          this._ro.observe(hdr);
+        }
+      }
+    };
+    syncHdr();
+    requestAnimationFrame(syncHdr);
+    setTimeout(syncHdr, 200);
+    setTimeout(syncHdr, 900);
+    window.addEventListener("load", syncHdr);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncHdr);
+    this._resize = syncHdr;
+    window.addEventListener("resize", this._resize);
+
+    const ids = ["intro", "work", "projects", "skills", "contact"];
+    const setActive = (id) => {
+      ids.forEach(k => {
+        const a = document.querySelector(`[data-nav="${k}"]`);
+        const l = document.querySelector(`[data-navline="${k}"]`);
+        if (!a || !l) return;
+        const on = k === id;
+        a.style.color = on ? "var(--accent)" : "var(--muted)";
+        l.style.background = on ? "var(--accent)" : "var(--line)";
+        l.style.width = on ? "26px" : "16px";
+      });
+    };
+    this._obs = new IntersectionObserver((entries) => {
+      const vis = entries.filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (vis.length) setActive(vis[0].target.id);
+    }, { rootMargin: "-84px 0px -60% 0px", threshold: 0 });
+    ids.forEach(id => { const el = document.getElementById(id); if (el) this._obs.observe(el); });
+    setActive("intro");
+
+    console.log("%cPaige Lester — Engineering Manager", "font:600 16px system-ui;color:#e79bbb");
+    console.log("%cYou inspected the page. That is the sort of thing I like in a team.\nHiring? paigelester7@gmail.com", "font:13px ui-monospace;color:#9aa");
+  }
+
+  componentWillUnmount() {
+    if (this._obs) this._obs.disconnect();
+    if (this._ro) this._ro.disconnect();
+    window.removeEventListener("resize", this._resize);
+    window.removeEventListener("load", this._resize);
+  }
+
+  applyTheme(t) {
+    document.documentElement.setAttribute("data-theme", t);
+    localStorage.setItem("pl-cv-theme", t);
+    this.setState({ theme: t });
+  }
+
+  renderVals() {
+    const A = Component.ADVICE, F = Component.FACES;
+    const n = this.state.poked;
+    return {
+      face: F[n % F.length],
+      poke: () => {
+        const next = this.state.poked + 1;
+        this.setState({ poked: next });
+        this.typeOut(A[1 + ((next - 1) % (A.length - 1))]);
+      },
+      toggleTheme: () => this.applyTheme(this.state.theme === "dark" ? "light" : "dark"),
+      downloadPdf: () => window.print()
+    };
+  }
+}
+</script>
+</body>
+</html>

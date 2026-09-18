@@ -11,16 +11,16 @@ Paige's curriculum vitae, shown on the site and also offered as a download.
 _Avoid_: Resume, résumé
 
 **CV Section**:
-One of the fixed parts of the CV: Personal Statement, Work Experience, Skills, Education or Links.
+One of the fixed parts of the CV: Intro, Work, Skills, Education or Links.
 _Avoid_: Block, panel, card
 
-**Personal Statement**:
+**Intro**:
 The short introductory summary at the top of the CV.
-_Avoid_: Bio, about me, summary
+_Avoid_: Personal Statement, bio, about me, summary
 
-**Work Experience**:
+**Work**:
 The CV Section listing Paige's past and current roles.
-_Avoid_: Jobs, employment history, career
+_Avoid_: Work Experience, jobs, employment history, career
 
 **Skills**:
 The CV Section listing Paige's abilities and technologies.
@@ -29,8 +29,18 @@ The CV Section listing Paige's abilities and technologies.
 The CV Section listing Paige's qualifications and where they were gained.
 
 **Links**:
-The CV Section of outbound links to Paige's profiles elsewhere, such as LinkedIn.
-_Avoid_: Socials, contact
+The CV Section of ways to reach Paige elsewhere: outbound links to Paige's profiles, such as LinkedIn, and Paige's email address.
+_Avoid_: Socials
+
+**Contact**:
+The closing part of the site telling a reader how to reach Paige: the Links, Education and a note that references are available on request. Shown on the site only, not in the downloadable CV.
+_Avoid_: Footer, get in touch
+
+### Site
+
+**Dot**:
+The small character in the site header who offers a new piece of advice each time a visitor clicks it.
+_Avoid_: Mascot, bot, assistant
 
 ### Future
 
