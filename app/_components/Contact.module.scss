@@ -45,18 +45,7 @@
     background-color $duration-fast,
     border-color $duration-fast;
 
-  &:focus-visible {
-    outline: $focus-ring-width solid var(--accent);
-    outline-offset: $focus-ring-offset;
-  }
-
-  @media (max-width: $breakpoint-phone) {
-    display: inline-flex;
-    align-items: center;
-    min-height: $site-tap-target;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+  @include site-button;
 }
 
 .email {

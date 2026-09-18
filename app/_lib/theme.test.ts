@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { decideTheme } from "./theme";
+import { decideTheme, otherTheme } from "./theme";
 
 describe("decideTheme", () => {
   test("is dark when nothing is saved", () => {
@@ -16,5 +16,15 @@ describe("decideTheme", () => {
 
   test("is dark when the saved value is not a theme", () => {
     expect(decideTheme("Light")).toBe("dark");
+  });
+});
+
+describe("otherTheme", () => {
+  test("is light after dark", () => {
+    expect(otherTheme("dark")).toBe("light");
+  });
+
+  test("is dark after light", () => {
+    expect(otherTheme("light")).toBe("dark");
   });
 });

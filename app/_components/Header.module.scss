@@ -1,0 +1,90 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $site-header-z-index;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $site-header-gap;
+  align-items: center;
+  justify-content: space-between;
+  padding: $site-header-padding;
+  border-bottom: $border-width solid var(--line);
+  background-color: color-mix(
+    in oklab,
+    var(--bg) $site-header-opacity,
+    transparent
+  );
+  backdrop-filter: blur($site-header-blur);
+
+  @media (max-width: $breakpoint-small-phone) {
+    gap: $site-header-gap-small-phone;
+    padding: $site-header-padding-small-phone;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+// Holds Dot, and takes the space the controls don't.
+.dot {
+  flex: 1;
+  min-width: 0;
+}
+
+.controls {
+  display: flex;
+  gap: $site-header-controls-gap;
+  align-items: center;
+}
+
+@mixin header-button {
+  cursor: pointer;
+  border-radius: $radius-site;
+  transition:
+    color $duration-fast,
+    border-color $duration-fast,
+    opacity $duration-fast;
+
+  @include site-button;
+}
+
+.toggle {
+  @include header-button;
+  width: $site-header-toggle-width;
+  height: $site-header-toggle-height;
+  border: $border-width solid var(--chip);
+  background: transparent;
+  font-size: $site-mono-button-font-size;
+  color: var(--muted);
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    width: $site-tap-target;
+    height: $site-tap-target;
+  }
+}
+
+.download {
+  @include header-button;
+  padding: $site-header-download-padding;
+  background-color: var(--btn-bg);
+  font-family: $font-mono;
+  font-size: $site-label-font-size;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $site-header-download-letter-spacing;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--btn-fg);
+
+  &:hover {
+    opacity: $site-header-download-hover-opacity;
+  }
+}

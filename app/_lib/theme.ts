@@ -25,5 +25,23 @@ export function applySavedTheme(): void {
   } catch {}
 }
 
+/** The theme the theme toggle switches to from the given one. */
+export function otherTheme(theme: Theme): Theme {
+  return theme === "dark" ? "light" : "dark";
+}
+
+/**
+ * Switches <html> to the other theme and saves the choice. The theme still
+ * switches when local storage is unavailable, but is then not remembered.
+ */
+export function switchTheme(): void {
+  const root = document.documentElement;
+  const theme = otherTheme(decideTheme(root.dataset.theme ?? null));
+  root.dataset.theme = theme;
+  try {
+    localStorage.setItem(themeStorageKey, theme);
+  } catch {}
+}
+
 /** applySavedTheme as an inline script, to run before first paint. */
 export const applySavedThemeScript = `try{document.documentElement.dataset.theme=(${decideTheme.toString()})(localStorage.getItem(${JSON.stringify(themeStorageKey)}))}catch(e){}`;

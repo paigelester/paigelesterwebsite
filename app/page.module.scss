@@ -1,5 +1,4 @@
 @use "./styles/variables" as *;
-@use "./styles/mixins" as *;
 
 // No gap between sections: each sets its own spacing, as in the mockup.
 .main {
@@ -14,20 +13,5 @@
     max-width: none;
     // The @page margin frames the printed CV.
     padding: 0;
-  }
-}
-
-// The name is in the Intro, so the download link sits on its own.
-.header {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.download {
-  @include text-link;
-
-  // A printed page has no use for a download link.
-  @media print {
-    display: none;
   }
 }

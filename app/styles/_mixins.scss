@@ -73,3 +73,21 @@
     }
   }
 }
+
+// A button on the site: a visible keyboard focus ring, and tall enough to tap
+// on phones.
+@mixin site-button {
+  &:focus-visible {
+    outline: $focus-ring-width solid var(--accent);
+    outline-offset: $focus-ring-offset;
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $site-tap-target;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
