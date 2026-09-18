@@ -1,132 +1,19 @@
 @use "./styles/variables" as *;
 
-$logo-width: 6.25rem;
-$logo-height: 1.25rem;
-$vercel-logo-width: 1rem;
-$vercel-logo-height: 0.875rem;
-$button-height: 3rem;
-$button-width: 9.875rem;
-
-.page {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: $zinc-50;
-}
-
 .main {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  gap: $space-lg;
   width: 100%;
   max-width: $width-3xl;
-  padding: $space-2xl $space-xl;
-  background: $white;
-
-  @media (min-width: $breakpoint-sm) {
-    align-items: flex-start;
-  }
+  margin: 0 auto;
+  padding: $space-xl $space-md;
 }
 
-.logo {
-  width: $logo-width;
-  height: $logo-height;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $space-lg;
-  text-align: center;
-
-  @media (min-width: $breakpoint-sm) {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  h1 {
-    max-width: $width-xs;
-    font-size: $font-size-3xl;
-    font-weight: $font-weight-semibold;
-    line-height: $line-height-3xl;
-    letter-spacing: $letter-spacing-tight;
-    color: $black;
-  }
-
-  code {
-    padding: $space-3xs $space-2xs;
-    border-radius: $radius-sm;
-    background: $surface-muted;
-    font-size: $font-size-code;
-  }
-
-  p {
-    max-width: $width-md;
-    font-size: $font-size-lg;
-    line-height: $line-height-lg;
-    color: $zinc-600;
-  }
-
-  a {
-    font-weight: $font-weight-medium;
-    color: $zinc-950;
-  }
-}
-
-.ctas {
-  display: flex;
-  flex-direction: column;
-  gap: $space-sm;
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
-
-  @media (min-width: $breakpoint-sm) {
-    flex-direction: row;
-  }
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: $space-xs;
-  width: 100%;
-  height: $button-height;
-  padding: 0 $space-md;
-  border-radius: $radius-full;
-  transition:
-    background-color $duration-fast,
-    border-color $duration-fast;
-
-  @media (min-width: $breakpoint-md) {
-    width: $button-width;
-  }
-}
-
-.primary {
-  background: var(--foreground);
-  color: var(--background);
-
-  &:hover {
-    background: $foreground-hover;
-  }
-}
-
-.secondary {
-  border: $border-width solid $border-color;
-
-  &:hover {
-    border-color: transparent;
-    background: $surface-subtle;
-  }
-}
-
-.vercelLogo {
-  width: $vercel-logo-width;
-  height: $vercel-logo-height;
+.name {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-3xl;
+  letter-spacing: $letter-spacing-tight;
+  color: $black;
 }

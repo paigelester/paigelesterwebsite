@@ -1,0 +1,19 @@
+@use "../styles/variables" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.heading {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $black;
+}
+
+.paragraph {
+  font-size: $font-size-base;
+  line-height: $line-height-lg;
+  color: $zinc-600;
+}
