@@ -1,0 +1,25 @@
+@use "./styles/variables" as *;
+
+:root {
+    --background: #{$background};
+    --foreground: #{$foreground};
+}
+
+// Minimal reset.
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+code {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
