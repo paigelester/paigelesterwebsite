@@ -86,12 +86,11 @@ export type CV = {
   links: Links;
 };
 
-// Placeholder content until launch.
+// Skills, Education and Links are placeholder content until launch.
 export const cv: CV = {
   personalStatement: {
     paragraphs: [
-      "Software developer who enjoys building clear, reliable and accessible products, from the first sketch through to production.",
-      "Looking for a role on a friendly team where I can keep learning, share what I know and ship work that matters to the people who use it."
+      "Engineering Manager with 12 years in software, spanning regulated FinTech and scientific instrument software. I line-manage a team of five delivering three .NET and Angular applications against three separate release schedules, having come to management through the code — Senior and then Principal Engineer on the same team. That is where I intend to stay: close enough to the technical detail to make architectural calls and to mentor engineers through real work rather than from a distance. In the past year I have progressed two engineers from mid-level to senior, shipped eight releases, and taken on the structural problems that slow delivery down, including those owned by other departments. I am looking for an engineering management role with that same balance of people leadership and technical involvement — the domain matters less to me than a well-defined problem."
     ]
   },
   workExperience: {
