@@ -1,8 +1,26 @@
 @use "./styles/variables" as *;
 
-:root {
-  --background: #{$background};
-  --foreground: #{$foreground};
+// Theme colours. The root layout sets data-theme on <html> before first paint;
+// dark is the default. Only the site's own pages use them (see SitePage), so
+// the PDF page keeps its fixed colours.
+@mixin theme-properties($theme) {
+  @each $name, $value in $theme {
+    --#{$name}: #{$value};
+  }
+}
+
+:root,
+:root[data-theme="dark"] {
+  @include theme-properties($theme-dark);
+}
+
+:root[data-theme="light"] {
+  @include theme-properties($theme-light);
+}
+
+// Fills any canvas a site page doesn't cover, such as when overscrolling.
+html:has([data-site]) {
+  background-color: var(--bg);
 }
 
 // Minimal reset.

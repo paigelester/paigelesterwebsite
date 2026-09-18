@@ -9,6 +9,7 @@
 
 .heading {
   @include print-keep-with-next;
+  @include site-section-heading;
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $black;
@@ -25,6 +26,10 @@
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   color: $black;
+
+  @include on-site {
+    color: var(--ink);
+  }
 }
 
 .skills {
@@ -42,4 +47,9 @@
   print-color-adjust: exact;
   font-size: $font-size-base;
   color: $foreground;
+
+  @include on-site {
+    background: var(--chip);
+    color: var(--ink);
+  }
 }

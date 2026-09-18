@@ -1,0 +1,14 @@
+@use "../styles/variables" as *;
+
+.page {
+  min-height: 100dvh;
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    var(--pattern) $pattern-dot-radius,
+    transparent $pattern-dot-radius
+  );
+  background-size: $pattern-spacing $pattern-spacing;
+  color: var(--ink);
+  font-family: $font-sans;
+  -webkit-font-smoothing: antialiased;
+}

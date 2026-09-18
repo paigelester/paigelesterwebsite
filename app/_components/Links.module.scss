@@ -9,6 +9,7 @@
 
 .heading {
   @include print-keep-with-next;
+  @include site-section-heading;
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $black;

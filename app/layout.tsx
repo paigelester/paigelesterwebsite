@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import SavedTheme from "./_components/SavedTheme";
 import WwwRedirect from "./_components/WwwRedirect";
 import { canonicalOrigin } from "./_lib/canonicalOrigin";
+import { applySavedThemeScript, decideTheme } from "./_lib/theme";
 import "./globals.scss";
 
 const geistSans = Geist({
@@ -30,8 +32,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    // The inline script may change data-theme before React hydrates.
+    <html
+      lang="en"
+      data-theme={decideTheme(null)}
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: applySavedThemeScript }} />
+      </head>
       <body>
+        <SavedTheme />
         <WwwRedirect />
         {children}
       </body>

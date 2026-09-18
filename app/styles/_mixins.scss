@@ -14,6 +14,24 @@
   }
 }
 
+// Styles for the site's own pages, which sit inside SitePage. The PDF page
+// shares the CV components but not these styles, so it keeps its look.
+@mixin on-site {
+  [data-site] & {
+    @content;
+  }
+}
+
+// A CV Section's heading, set as a label on the site.
+@mixin site-section-heading {
+  @include on-site {
+    font-family: $font-mono;
+    // DM Mono has no semibold, so a heavier weight would be faked.
+    font-weight: $font-weight-medium;
+    color: var(--dim);
+  }
+}
+
 // An underlined text link with a visible keyboard focus ring.
 @mixin text-link {
   font-size: $font-size-base;
@@ -31,5 +49,17 @@
     outline: $focus-ring-width solid $foreground;
     outline-offset: $focus-ring-offset;
     border-radius: $radius-sm;
+  }
+
+  @include on-site {
+    color: var(--accent);
+
+    &:hover {
+      color: var(--ink);
+    }
+
+    &:focus-visible {
+      outline-color: var(--accent);
+    }
   }
 }

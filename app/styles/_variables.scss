@@ -9,7 +9,6 @@ $zinc-950: #09090b;
 $neutral-900: #171717;
 $neutral-800: #383838;
 
-$background: $white;
 $foreground: $neutral-900;
 $foreground-hover: $neutral-800;
 $surface-subtle: rgba($black, 0.04);
@@ -65,3 +64,43 @@ $page-size: A4;
 $page-margin: 15mm;
 // The root font size in print, which every rem-based size scales from.
 $print-font-size: 10pt;
+
+// Site look
+// The theme colour sets, from the mockup. globals.scss turns each into CSS
+// custom properties, switched by data-theme on <html>.
+$theme-dark: (
+  bg: #15101b,
+  ink: #ece6f0,
+  accent: #e79bbb,
+  line: rgba(255, 255, 255, 0.12),
+  muted: rgba(236, 230, 240, 0.72),
+  dim: rgba(236, 230, 240, 0.62),
+  body: rgba(236, 230, 240, 0.78),
+  chip: rgba(255, 255, 255, 0.18),
+  btn-bg: #e79bbb,
+  btn-fg: #15101b,
+  pattern: rgba(231, 155, 187, 0.3),
+  panel: #1d1724,
+  glow: rgba(231, 155, 187, 0.1)
+);
+$theme-light: (
+  bg: #e4d7dc,
+  ink: #1b1018,
+  accent: #9c3a68,
+  line: rgba(27, 16, 24, 0.15),
+  muted: rgba(27, 16, 24, 0.7),
+  dim: rgba(27, 16, 24, 0.6),
+  body: rgba(27, 16, 24, 0.8),
+  chip: rgba(27, 16, 24, 0.2),
+  btn-bg: #1b1018,
+  btn-fg: #e4d7dc,
+  pattern: rgba(156, 58, 104, 0.24),
+  panel: #efe4e8,
+  glow: rgba(156, 58, 104, 0.07)
+);
+
+$font-sans: var(--font-instrument-sans), system-ui, sans-serif;
+$font-mono: var(--font-dm-mono), ui-monospace, monospace;
+// The dotted background: each dot's radius and the spacing of the grid.
+$pattern-dot-radius: 1.4px;
+$pattern-spacing: 48px;

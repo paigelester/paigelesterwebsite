@@ -9,6 +9,7 @@
 
 .heading {
   @include print-keep-with-next;
+  @include site-section-heading;
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $black;
@@ -32,17 +33,29 @@
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   color: $black;
+
+  @include on-site {
+    color: var(--ink);
+  }
 }
 
 .organisation {
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
   color: $foreground;
+
+  @include on-site {
+    color: var(--muted);
+  }
 }
 
 .dates {
   font-size: $font-size-base;
   color: $zinc-600;
+
+  @include on-site {
+    color: var(--muted);
+  }
 }
 
 .highlights {
@@ -58,4 +71,8 @@
   font-size: $font-size-base;
   line-height: $line-height-base;
   color: $zinc-600;
+
+  @include on-site {
+    color: var(--body);
+  }
 }

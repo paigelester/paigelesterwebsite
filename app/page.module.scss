@@ -30,7 +30,7 @@
   font-weight: $font-weight-semibold;
   line-height: $line-height-3xl;
   letter-spacing: $letter-spacing-tight;
-  color: $black;
+  color: var(--ink);
 }
 
 .download {

@@ -16,12 +16,12 @@
   font-weight: $font-weight-semibold;
   line-height: $line-height-3xl;
   letter-spacing: $letter-spacing-tight;
-  color: $black;
+  color: var(--ink);
 }
 
 .message {
   font-size: $font-size-base;
-  color: $foreground;
+  color: var(--body);
 }
 
 .link {
