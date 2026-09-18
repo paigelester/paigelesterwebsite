@@ -43,7 +43,7 @@ export type WorkExperience = {
   roles: readonly Role[];
 };
 
-/** A named group of related skills, e.g. "Languages". */
+/** A named group of related skills, e.g. "Leadership". */
 export type SkillGroup = {
   name: string;
   skills: readonly string[];
@@ -86,7 +86,7 @@ export type CV = {
   links: Links;
 };
 
-// Skills, Education and Links are placeholder content until launch.
+// Education and Links are placeholder content until launch.
 export const cv: CV = {
   personalStatement: {
     paragraphs: [
@@ -181,21 +181,40 @@ export const cv: CV = {
   skills: {
     groups: [
       {
-        name: "Languages",
-        skills: ["TypeScript", "JavaScript", "HTML", "CSS", "C#"]
+        name: "Languages & frameworks",
+        skills: [
+          "C#/.NET/.NET Core",
+          "Angular",
+          "TypeScript/JavaScript",
+          "React",
+          "Python",
+          "SQL/NoSQL",
+          "HTML5/CSS3"
+        ]
       },
       {
-        name: "Frameworks",
-        skills: ["React", "Next.js", "Node.js", "Unity"]
+        name: "Cloud & delivery",
+        skills: [
+          "AWS/Lambda/S3/SNS/SQS",
+          "Docker/Kubernetes",
+          "CI pipelines",
+          "Automated testing (Selenium, Cucumber, Wdio)",
+          "SonarCloud",
+          "Snyk"
+        ]
       },
       {
         name: "Tooling",
+        skills: ["GitHub", "Bitbucket", "Jira", "Confluence", "Docs-as-code"]
+      },
+      {
+        name: "Leadership",
         skills: [
-          "Git",
-          "GitHub",
-          "GitHub Actions",
-          "Jira",
-          "Visual Studio Code"
+          "Line management",
+          "Mentoring and progression",
+          "Scrum",
+          "Cross-team delivery",
+          "Release management"
         ]
       }
     ]
