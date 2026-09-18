@@ -18,7 +18,7 @@ type Month =
 /** A calendar month, written as year and month, e.g. "2021-03". */
 export type YearMonth = `${number}-${Month}`;
 
-/** The months a role ran for. A role without an end is ongoing. */
+/** The months something ran for. A range without an end is ongoing. */
 export type DateRange = {
   start: YearMonth;
   end?: YearMonth;
@@ -53,11 +53,24 @@ export type Skills = {
   groups: readonly SkillGroup[];
 };
 
+/** A qualification Paige gained and where it was gained. */
+export type Qualification = {
+  name: string;
+  institution: string;
+  dates: DateRange;
+};
+
+/** Paige's qualifications, most recent first. */
+export type Education = {
+  qualifications: readonly Qualification[];
+};
+
 /** Paige's CV, composed of one type per CV Section. */
 export type CV = {
   personalStatement: PersonalStatement;
   workExperience: WorkExperience;
   skills: Skills;
+  education: Education;
 };
 
 // Placeholder content until launch.
@@ -112,6 +125,20 @@ export const cv: CV = {
           "Jira",
           "Visual Studio Code"
         ]
+      }
+    ]
+  },
+  education: {
+    qualifications: [
+      {
+        name: "BSc (Hons) Computer Science",
+        institution: "Example University",
+        dates: { start: "2015-09", end: "2018-06" }
+      },
+      {
+        name: "A Levels: Mathematics, Computing, Physics",
+        institution: "Sample Sixth Form College",
+        dates: { start: "2013-09", end: "2015-06" }
       }
     ]
   }

@@ -1,0 +1,43 @@
+@use "../styles/variables" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.heading {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $black;
+}
+
+.qualifications {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  list-style: none;
+}
+
+.qualification {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3xs;
+}
+
+.name {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $black;
+}
+
+.institution {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $foreground;
+}
+
+.dates {
+  font-size: $font-size-base;
+  color: $zinc-600;
+}

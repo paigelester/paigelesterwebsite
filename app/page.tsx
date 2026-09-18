@@ -1,4 +1,5 @@
 import { cv } from "@/content/cv";
+import Education from "./_components/Education";
 import PersonalStatement from "./_components/PersonalStatement";
 import Skills from "./_components/Skills";
 import WorkExperience from "./_components/WorkExperience";
@@ -11,6 +12,7 @@ export default function Home() {
       <PersonalStatement personalStatement={cv.personalStatement} />
       <WorkExperience workExperience={cv.workExperience} />
       <Skills skills={cv.skills} />
+      <Education education={cv.education} />
     </main>
   );
 }
