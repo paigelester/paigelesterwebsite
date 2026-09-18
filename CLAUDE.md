@@ -4,6 +4,8 @@
 
 Keep history linear. Integrate work by rebasing or squashing: `git pull --rebase`, `git rebase`, then `git merge --ff-only`. Merge commits are not allowed.
 
+Commit messages follow Conventional Commits, enforced by a `commit-msg` hook. See `docs/agents/commit-conventions.md`.
+
 ## Agent skills
 
 ### Issue tracker
