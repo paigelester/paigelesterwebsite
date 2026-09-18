@@ -15,7 +15,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "prepare": "husky",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check:overrides": "node ci/check-overrides.ts"
   },
   "dependencies": {
     "next": "16.3.5",
