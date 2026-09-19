@@ -88,6 +88,8 @@
   margin-bottom: $site-work-meta-margin-bottom;
   font-family: $font-mono;
   font-size: $site-mono-small-font-size;
+  // Set, not inherited, so the role's marker can centre on it.
+  line-height: $site-work-meta-line-height;
   color: var(--muted);
 }
 

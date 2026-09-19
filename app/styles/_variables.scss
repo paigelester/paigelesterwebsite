@@ -182,10 +182,14 @@ $site-work-label-margin-bottom: 2rem; // 32px
 $site-work-timeline-indent: 2.5rem; // 40px
 $site-work-role-gap: 2.25rem; // 36px
 $site-work-marker-size: 0.5625rem; // 9px
-$site-work-marker-top: 0.5rem; // 8px
 $site-work-marker-glow: 0.25rem; // 4px
 // How strongly the accent tints the current role's marker glow.
 $site-work-marker-glow-strength: 18%;
+$site-work-meta-line-height: 1.125rem; // 18px
+// Centres the marker on the dates line.
+$site-work-marker-top: calc(
+  ($site-work-meta-line-height - $site-work-marker-size) / 2
+); // 4.5px
 $site-work-meta-margin-bottom: 0.4375rem; // 7px
 $site-work-title-font-size: clamp(1.5rem, 3.2vw, 1.9375rem); // 24–31px
 $site-work-title-letter-spacing: -0.03em;
