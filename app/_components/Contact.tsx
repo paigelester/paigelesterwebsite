@@ -31,7 +31,7 @@ export default function Contact({ education, links }: Props) {
         Contact
       </h2>
       <p className={styles.headline}>
-        Looking for people leadership with the technical detail still attached.
+        Engineering leadership is at its best where the real work happens.
       </p>
       <div className={styles.actions}>
         {emailLinks.map((link) => (
