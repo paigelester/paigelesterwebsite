@@ -4,6 +4,18 @@ export type DotState = {
   advice: string;
 };
 
+/**
+ * What Dot shows when a visitor runs paige.dot() in the console, until the
+ * next click.
+ */
+export const spottedDot: DotState = {
+  face: "[≖_≖]",
+  advice: "Psst. I saw that. Hello from the console."
+};
+
+/** The window event paige.dot() sends for Dot to show spottedDot. */
+export const dotSpottedEvent = "pl-dot-spotted";
+
 /** Dot's faces: the mockup's, then some more. */
 const faces = [
   "[•_•]",

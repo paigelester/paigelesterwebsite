@@ -8,6 +8,7 @@ function setUp(overrides: Partial<ConsoleEffects> = {}) {
     open: vi.fn(),
     switchTheme: vi.fn(),
     cycleAccent: vi.fn(() => "teal" as const),
+    spotDot: vi.fn(),
     ...overrides
   };
   const logged = () => log.mock.calls.map(([text]) => text).join("\n");
@@ -52,4 +53,13 @@ test("accent moves to the next accent and names it", () => {
 
   expect(commands.accent()).toContain("Accent: teal.");
   expect(effects.cycleAccent).toHaveBeenCalledOnce();
+});
+
+test("dot has Dot spot the visitor, and replies as Dot", () => {
+  const { commands, effects } = setUp();
+
+  expect(commands.dot()).toBe(
+    "[≖_≖] Psst. I saw that. Hello from the console."
+  );
+  expect(effects.spotDot).toHaveBeenCalledOnce();
 });

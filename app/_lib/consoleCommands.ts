@@ -1,4 +1,5 @@
 import { cycleAccent, type Accent } from "./accent";
+import { dotSpottedEvent, spottedDot } from "./dot";
 import { switchTheme } from "./theme";
 
 /** What the commands do outside themselves, passed in so tests can fake it. */
@@ -7,10 +8,11 @@ export type ConsoleEffects = {
   open: (url: string) => void;
   switchTheme: () => void;
   cycleAccent: () => Accent;
+  spotDot: () => void;
 };
 
 export type ConsoleCommands = Record<
-  "help" | "email" | "cv" | "theme" | "accent" | "stack",
+  "help" | "email" | "cv" | "theme" | "accent" | "dot" | "stack",
   () => string
 >;
 
@@ -30,6 +32,7 @@ const descriptions: Record<keyof ConsoleCommands, string> = {
   cv: "open my CV as a PDF",
   theme: "switch between dark and light",
   accent: "try the next accent colour",
+  dot: "say hello to Dot, up in the header",
   stack: "what this site is built with"
 };
 
@@ -68,6 +71,10 @@ export function createConsoleCommands(
     accent() {
       return `Accent: ${effects.cycleAccent()}. Run it again for the next one.`;
     },
+    dot() {
+      effects.spotDot();
+      return `${spottedDot.face} ${spottedDot.advice}`;
+    },
     stack() {
       return "Next.js as a static export, React, TypeScript and Sass, tested with Vitest. Playwright prints the PDF.";
     }
@@ -80,6 +87,7 @@ export function installConsoleCommands(): void {
     log: (text, style) => console.log(text, style),
     open: (url) => window.open(url, "_blank"),
     switchTheme,
-    cycleAccent
+    cycleAccent,
+    spotDot: () => window.dispatchEvent(new Event(dotSpottedEvent))
   });
 }
