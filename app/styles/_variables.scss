@@ -108,6 +108,24 @@ $theme-light: (
   glow: rgba(156, 58, 104, 0.07)
 );
 
+// The other accents a visitor can try from the console with paige.accent(),
+// each with its dark and light theme colour. The theme maps hold the default,
+// rose; globals.scss derives the colours that follow the accent.
+$accents: (
+  "teal": (
+    dark: #7fd1c7,
+    light: #1f6f68
+  ),
+  "amber": (
+    dark: #e8c07a,
+    light: #8a5a12
+  ),
+  "lavender": (
+    dark: #b9a4f0,
+    light: #5b3fa0
+  )
+);
+
 $font-sans: var(--font-instrument-sans), system-ui, sans-serif;
 $font-mono: var(--font-dm-mono), ui-monospace, monospace;
 // The dotted background: each dot's radius and the spacing of the grid.

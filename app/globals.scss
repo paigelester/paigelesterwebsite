@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:map";
 @use "./styles/variables" as *;
 
 // Theme colours. The root layout sets data-theme on <html> before first paint;
@@ -16,6 +18,32 @@
 
 :root[data-theme="light"] {
   @include theme-properties($theme-light);
+}
+
+// An accent chosen from the console with paige.accent(), set as data-accent
+// on <html>. The colours that follow the accent keep the theme's opacities.
+// Each rule names its theme, so a dark-only colour such as --btn-bg can't
+// outrank the light theme's.
+@mixin accent-properties($theme, $accent) {
+  --accent: #{$accent};
+  --pattern: #{color.change(
+      $accent,
+      $alpha: color.alpha(map.get($theme, pattern))
+    )};
+  --glow: #{color.change($accent, $alpha: color.alpha(map.get($theme, glow)))};
+  @if map.get($theme, btn-bg) == map.get($theme, accent) {
+    --btn-bg: #{$accent};
+  }
+}
+
+@each $name, $colours in $accents {
+  :root[data-theme="dark"][data-accent="#{$name}"] {
+    @include accent-properties($theme-dark, map.get($colours, dark));
+  }
+
+  :root[data-theme="light"][data-accent="#{$name}"] {
+    @include accent-properties($theme-light, map.get($colours, light));
+  }
 }
 
 // Fills any canvas a site page doesn't cover, such as when overscrolling.

@@ -42,6 +42,10 @@ _Avoid_: Footer, get in touch
 The small character in the site header who offers a new piece of advice each time a visitor clicks it.
 _Avoid_: Mascot, bot, assistant
 
+**Console Commands**:
+The `paige.<command>()` commands a visitor can run in the browser console, such as showing Paige's email address or trying another accent colour. The note for visitors who inspect the page points to them.
+_Avoid_: Easter egg, cheats
+
 ### Future
 
 **Project**:
