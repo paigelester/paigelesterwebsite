@@ -18,7 +18,7 @@ export default function Work({ work, variant }: Props) {
       aria-labelledby="work-heading"
     >
       <h2 id="work-heading" className={styles.heading}>
-        {onSite ? "Work" : "Work Experience"}
+        Work Experience
       </h2>
       <ol className={styles.roles}>
         {work.roles.map((role) => (
