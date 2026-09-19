@@ -4,7 +4,7 @@
  * variables. The last points visitors to the console commands.
  */
 const consoleMessages = [
-  ["%cPaige Lester Inspector", "font:600 16px system-ui;color:#e79bbb"],
+  ["%cThe Paige Lester Inspector", "font:600 16px system-ui;color:#e79bbb"],
   [
     "%cYou inspected the page. Curiosity looks good on you.\nSay hello: paigelester7@gmail.com",
     "font:13px ui-monospace;color:#9aa"
