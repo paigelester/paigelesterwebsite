@@ -9,7 +9,7 @@ const consoleMessages = [
     "font:600 16px system-ui;color:#e79bbb"
   ],
   [
-    "%cYou inspected the page. That is the sort of thing I like in a team.\nHiring? paigelester7@gmail.com",
+    "%cYou inspected the page. That is the sort of thing I like in a team.\nSay hello: paigelester7@gmail.com",
     "font:13px ui-monospace;color:#9aa"
   ]
 ] as const;
