@@ -112,12 +112,11 @@ export const cv: CV = {
         organisation: "Waters Corporation",
         dates: { start: "2024-11" },
         highlights: [
-          "Line manager to four developers and a tester, rising to five developers and two testers with contractors, on the team I previously worked in as Senior and Principal Engineer",
-          "Progressed two engineers from mid-level to senior through structured mentoring, handing over technical analysis and stepping back to let them reach their own conclusions",
-          "Driving a cross-department pilot, without line authority, to remove a documentation and translation bottleneck adding three to six weeks to the end of every release",
-          "Won buy-in from that department by supplying the technical capability they lacked rather than imposing process, moving them toward docs-as-code, continuous translation and AI style-guide-driven pre-review in place of sequential manual gates",
-          "Managed delivery of three Waters Connect applications against three separate release schedules with a single team, where most teams in the business carry one; shipped 8 releases",
-          "Partnered with the Product Owner on a multi-week customer feedback programme for a major release, which rebuilt confidence among users who had long felt unheard and was described at customer conferences as the biggest improvement to the application in years"
+          "Line-managed five to seven developers and testers across permanent staff and contractors, running one-to-ones, performance reviews and hiring",
+          "Partnered with the Product Owner on multi-week reviews where stakeholders and beta customers tried a major release hands-on, winning back long-unheard users, with the release later described at customer conferences as the biggest improvement in years",
+          "Handed engineers ownership of technical analysis, challenged their thinking until they reached their own conclusions and encouraged them to work across teams and departments, with two progressing from mid-level to senior",
+          "Managed delivery of three products at once from one team, where other products in the business had at least one dedicated team, shipping eight releases on time across separate schedules",
+          "Led a cross-department, two-team pilot opening documentation beyond technical writers, freeing them for higher-priority work in later releases and building the case for a second phase to remove a recurring three-to-six-week documentation and translation bottleneck"
         ]
       },
       {
@@ -127,6 +126,7 @@ export const cv: CV = {
         highlights: [
           "Promoted to Principal on the same team and applications, with a remit extending across departments",
           "Led the first release of the team's third application from scratch",
+          "Opened up areas of code to the whole team by introducing a consistent structure of stepped processing workflows, command-query separation and command validation",
           "Drove genuine adoption of the UX department's shared UI component library, which was mandated across Waters Connect but barely used in practice, and worked directly with that team to improve the integration path",
           "Extended the shared-package programme begun as Senior Engineer into the wider estate",
           "Mentored less experienced developers through pairing and mob programming, widening the group of engineers confident to work across all three applications"
