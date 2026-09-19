@@ -30,6 +30,9 @@ export type DateRange =
 
 /** The short introductory summary at the top of the CV. */
 export type Intro = {
+  /** When Paige started working in software. */
+  careerStart: YearMonth;
+  /** Each "{years}" is shown as the whole years since `careerStart`. */
   paragraphs: readonly string[];
 };
 
@@ -97,8 +100,9 @@ export type CV = {
 // Education is placeholder content until launch.
 export const cv: CV = {
   intro: {
+    careerStart: "2014-08",
     paragraphs: [
-      "Engineering Manager with 12 years in software, spanning regulated FinTech and scientific instrument software. I line-manage a team of five delivering three .NET and Angular applications against three separate release schedules, having come to management through the code — Senior and then Principal Engineer on the same team. That is where I intend to stay: close enough to the technical detail to make architectural calls and to mentor engineers through real work rather than from a distance. In the past year I have progressed two engineers from mid-level to senior, shipped eight releases, and taken on the structural problems that slow delivery down, including those owned by other departments. I am looking for an engineering management role with that same balance of people leadership and technical involvement — the domain matters less to me than a well-defined problem."
+      "Engineering Manager with {years} years in software, spanning regulated FinTech and scientific instrument software. I line-manage a team of five delivering three .NET and Angular applications against three separate release schedules, having come to management through the code — Senior and then Principal Engineer on the same team. That is where I intend to stay: close enough to the technical detail to make architectural calls and to mentor engineers through real work rather than from a distance. In the past year I have progressed two engineers from mid-level to senior, shipped eight releases, and taken on the structural problems that slow delivery down, including those owned by other departments. I am looking for an engineering management role with that same balance of people leadership and technical involvement — the domain matters less to me than a well-defined problem."
     ]
   },
   work: {

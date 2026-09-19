@@ -1,4 +1,5 @@
 import type { Intro as IntroData, Links } from "@/content/cv";
+import { fillYears } from "../_lib/yearsSince";
 import styles from "./Intro.module.scss";
 
 type Props =
@@ -10,11 +11,15 @@ type Props =
  * the email address; the PDF page keeps its plain "Personal Statement".
  */
 export default function Intro(props: Props) {
-  const paragraphs = props.intro.paragraphs.map((paragraph) => (
-    <p key={paragraph} className={styles.paragraph}>
-      {paragraph}
-    </p>
-  ));
+  // The site is built statically, so the years are counted at build time.
+  const today = new Date();
+  const paragraphs = props.intro.paragraphs
+    .map((paragraph) => fillYears(paragraph, props.intro.careerStart, today))
+    .map((paragraph) => (
+      <p key={paragraph} className={styles.paragraph}>
+        {paragraph}
+      </p>
+    ));
 
   if (props.variant === "print") {
     return (
