@@ -11,7 +11,7 @@ Rate every item out of 10 against the rubric below.
 
 In the Work Experience section, rate **per bullet**: a table with the bullet (abbreviated), its score, and the one or two things holding it back. Feedback can be to reword a bullet, merge two, split one, extend one with a result, or delete it. Other sections get a score and notes per item.
 
-Close with section-wide issues (tense consistency, ordering, gaps against claims made in the intro).
+Close with section-wide issues (tense and person consistency, ordering, gaps against claims made in the intro).
 
 Done when every bullet in scope carries a score and a reason.
 
@@ -40,6 +40,7 @@ Done with a piece when it is applied, or the owner declines it.
 - **Durable**: the owner keeps this CV live, so leave out details that will change soon (current product counts, team rosters); prefer wording that stays true.
 - **Distinct**: says something the intro and the other bullets do not.
 - **Tight**: one idea, one sentence, no nested clauses; about 35 words is the ceiling.
+- **Third person**: no "I", "my" or "me", anywhere, including the intro. Drop the subject and lead with the verb or the trait ("Has line-managed…", "Passionate about…"). Never propose a sentence in the first person, and flag any that survive in the CV.
 - **Consistent**: tense and voice match the role's other bullets.
 
 ## Banned words
@@ -47,5 +48,7 @@ Done with a piece when it is applied, or the owner declines it.
 The owner has ruled these out; never propose them:
 
 - coaching (and coach, coached)
+- spanning (and spans, spanned)
+- across
 
 Never use semicolons: they read as AI-written. Join clauses with a word ("with", "so", "by") or split the bullet.
