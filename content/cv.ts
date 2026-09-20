@@ -102,7 +102,7 @@ export const cv: CV = {
   intro: {
     careerStart: "2014-08",
     paragraphs: [
-      "Engineering Manager with {years} years in software, spanning regulated FinTech and scientific instruments. I have line-managed a team of five to seven, having come to management through the code as a Senior and then Principal Engineer. That background keeps me close enough to the technical detail to make architectural calls and guide people through real work. My focus is on developing engineers and resolving the problems that slow delivery down, even when they sit outside my own team."
+      "Hands-on Engineering Manager with {years} years in software development, from Edtech to FinTech and scientific instruments. Experience line-managing a team of five to seven, having come to management through the code as a Senior and then Principal Engineer. That background keeps the technical detail within reach, close enough to make architectural calls and guide people through real work. Passionate about developing engineers and resolving the problems that slow delivery down, even when they sit outside the team."
     ]
   },
   work: {
