@@ -32,7 +32,7 @@
     "@types/node": "^26.6.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "botalot": "github:paigelester/botalot#v1.1.0",
+    "botalot": "github:paigelester/botalot#v1.2.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "eslint-config-prettier": "^10.1.8",

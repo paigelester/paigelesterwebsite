@@ -28,3 +28,20 @@ Uses the default five triage labels: `needs-triage`, `needs-info`, `ready-for-ag
 ### Domain docs
 
 Single-context: one `CONTEXT.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+
+<!-- BEGIN:botalot-knowledge -->
+
+## How code is written and judged here
+
+Before writing or reviewing code, read each file below whose label fits the task. They are short. This repo's own rules overrule them.
+
+- Making any code change: `node_modules/botalot/knowledge/fundamentals/changes.md`
+- Writing or restructuring code: `node_modules/botalot/knowledge/fundamentals/clean-code.md`
+- Handling errors or checking input: `node_modules/botalot/knowledge/fundamentals/errors.md`
+- Writing or changing tests: `node_modules/botalot/knowledge/fundamentals/testing.md`
+- Writing TypeScript: `node_modules/botalot/knowledge/stacks/typescript.md`
+- Working on Next.js pages, components or config: `node_modules/botalot/knowledge/stacks/nextjs.md`
+
+This block is written by `botalot knowledge --write`. Change the rules in botalot, not here.
+
+<!-- END:botalot-knowledge -->
