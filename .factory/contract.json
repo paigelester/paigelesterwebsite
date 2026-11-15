@@ -1,6 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/paigelester/skills/master/schemas/contract.schema.json",
-  "factory": "1.0.0",
+  "$schema": "https://raw.githubusercontent.com/paigelester/botalot/main/schemas/contract.schema.json",
+  "botalot": "1.1.0",
   "stacks": ["typescript", "nextjs"],
   "commands": {
     "setup": ["npm install"],

@@ -8,11 +8,12 @@ Commit messages follow Conventional Commits, enforced by a `commit-msg` hook. Se
 
 ## Factory
 
-This repo runs the agent software factory from [paigelester/skills](https://github.com/paigelester/skills). Its contract with the factory is `.factory/contract.json`: the stacks whose knowledge loads, the checks every change must pass, and which reviews a change gets.
+This repo runs the software factory with [botalot](https://github.com/paigelester/botalot), installed as a dev dependency (`npx botalot`). Its contract is `.factory/contract.json`: the stacks whose knowledge loads, the checks every change must pass, and which reviews a change gets.
 
-- Check your work with `factory verify`. It runs every check in the contract; exit 0 means the work passes.
-- To implement a ticket, start its run with `factory start implement <ticket>` rather than doing the steps by hand. `factory next` carries a waiting run on.
-- When a check is added to or removed from `package.json`, change `commands.verify` in the contract in the same commit, then run `factory check`.
+- Check your work with `npx botalot verify`. It runs every check in the contract; exit 0 means the work passes.
+- To implement a ticket, start its run with `npx botalot start implement <ticket>` rather than doing the steps by hand. `npx botalot next` carries a waiting run on.
+- When a check is added to or removed from `package.json`, change `commands.verify` in the contract in the same commit, then run `npx botalot check`.
+- To upgrade botalot, change its version in `package.json` and the `botalot` version in the contract together.
 
 ## Agent skills
 
