@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "paigelester-skills": {
+      "source": {
+        "source": "github",
+        "repo": "paigelester/skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "factory@paigelester-skills": true
+  }
+}

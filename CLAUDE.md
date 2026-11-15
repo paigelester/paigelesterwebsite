@@ -6,6 +6,14 @@ Keep history linear. Integrate work by rebasing or squashing: `git pull --rebase
 
 Commit messages follow Conventional Commits, enforced by a `commit-msg` hook. See `docs/agents/commit-conventions.md`.
 
+## Factory
+
+This repo runs the agent software factory from [paigelester/skills](https://github.com/paigelester/skills). Its contract with the factory is `.factory/contract.json`: the stacks whose knowledge loads, the checks every change must pass, and which reviews a change gets.
+
+- Check your work with `factory verify`. It runs every check in the contract; exit 0 means the work passes.
+- To implement a ticket, start its run with `factory start implement <ticket>` rather than doing the steps by hand. `factory next` carries a waiting run on.
+- When a check is added to or removed from `package.json`, change `commands.verify` in the contract in the same commit, then run `factory check`.
+
 ## Agent skills
 
 ### Issue tracker

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/paigelester/skills/master/schemas/contract.schema.json",
+  "factory": "1.0.0",
+  "stacks": ["typescript", "nextjs"],
+  "commands": {
+    "verify": [
+      "npm run lint",
+      "npm run format:check",
+      "npm run typecheck",
+      "npm test",
+      "npm run build"
+    ],
+    "run": "npm run dev"
+  },
+  "workflows": ["implement"],
+  "reviews": [{ "paths": ["**"], "run": ["code"] }],
+  "limits": { "minutesPerRun": 60, "maxRuns": 2, "pauseAtQuotaPercent": 80 }
+}
