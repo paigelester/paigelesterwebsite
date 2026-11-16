@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/paigelester/botalot/main/schemas/contract.schema.json",
-  "botalot": "1.2.0",
+  "botalot": "1.3.0",
   "stacks": ["typescript", "nextjs"],
   "commands": {
     "setup": ["npm install"],
@@ -13,7 +13,7 @@
     ],
     "run": "npm run dev"
   },
-  "workflows": ["implement"],
+  "workflows": ["implement", "route", "fix-pr"],
   "reviews": [
     {
       "paths": ["**"],
